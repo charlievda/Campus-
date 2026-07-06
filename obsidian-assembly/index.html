@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Obsidian Assembly — Imagine Possible</title>
+<meta name="description" content="A private assembly for makers. Nothing shown first.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="logo">
+    <span class="logo-the">The</span>
+    <span class="logo-main">Obsidian<br>Assembly</span>
+  </a>
+  <span class="tagline">Imagine Possible</span>
+  <nav class="main-nav">
+    <a href="#places">PLACES</a>
+    <span class="nav-divider"></span>
+    <a href="#objects">OBJECTS</a>
+    <a href="#footer" class="send-request">SEND REQUEST</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+    <span class="menu-label">MENU</span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#places">Places</a>
+  <a href="#objects">Objects</a>
+  <a href="#footer">About</a>
+  <a href="#footer">Contacts</a>
+  <a href="#footer">People</a>
+</div>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-orbit" aria-hidden="true"></div>
+    <span class="hero-coord">Coordinates<br>Withheld</span>
+    <span class="hero-private">A Private Assembly<br>for Makers</span>
+
+    <h1 class="hero-title">
+      Nothing<br>
+      <span class="hero-title-indent">Shown</span><br>
+      First
+    </h1>
+
+    <img class="hero-rock" src="assets/images/hero-rock.svg" alt="Obsidian rock formation">
+    <img class="hero-photo hero-photo-left" src="assets/images/hero-left.svg" alt="Interior with snow view">
+    <img class="hero-photo hero-photo-right" src="assets/images/hero-right.svg" alt="Interior with coastal view">
+
+    <p class="hero-commitment">Commitment<br>Precedes<br>Entry /</p>
+
+    <a href="#footer" class="btn btn-light">SEEK ADMISSION <span class="dot"></span></a>
+    <span class="footer-tag">IMAGINE POSSIBLE</span>
+  </section>
+
+  <!-- EXPLORE PLACES -->
+  <section class="section-dark explore-places" id="places">
+    <h2 class="display-heading">
+      Explore<br><span class="heading-fade">Places</span>
+    </h2>
+    <p class="sub-heading">Not<br>Everything<br>is Visible</p>
+
+    <div class="teaser-stack" aria-hidden="true">
+      <img src="assets/images/places/inner-chamber.svg" alt="">
+      <img src="assets/images/places/coastal-view.svg" alt="">
+      <img src="assets/images/places/winter-retreat.svg" alt="">
+      <img src="assets/images/places/silent-room.svg" alt="">
+    </div>
+
+    <!-- PLACES CAROUSEL -->
+    <div class="carousel" id="placesCarousel">
+      <div class="carousel-track">
+        <figure class="carousel-slide"><img src="assets/images/places/inner-chamber.svg" alt="Inner Chamber"><figcaption>Inner Chamber</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/coastal-view.svg" alt="Coastal View"><figcaption>Coastal View</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/winter-retreat.svg" alt="Winter Retreat"><figcaption>Winter Retreat</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/silent-room.svg" alt="Silent Room"><figcaption>Silent Room</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/the-threshold.svg" alt="The Threshold"><figcaption>The Threshold</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/concrete-wing.svg" alt="Concrete Wing"><figcaption>Concrete Wing</figcaption></figure>
+        <figure class="carousel-slide"><img src="assets/images/places/garden-house.svg" alt="Garden House"><figcaption>Garden House</figcaption></figure>
+      </div>
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">&larr;</button>
+      <button class="carousel-arrow carousel-next" aria-label="Next">&rarr;</button>
+      <span class="carousel-counter"><span class="carousel-current">1</span>/<span class="carousel-total">7</span></span>
+    </div>
+  </section>
+
+  <!-- MAP / ADMISSION -->
+  <section class="section-map">
+    <img class="map-rock" src="assets/images/hero-rock.svg" alt="Obsidian rock">
+    <h2 class="display-heading map-heading">You Won't<br>Find Them<br>on a Map</h2>
+
+    <div class="map-copy">
+      <p class="eyebrow">THESE PLACES AREN'T BROADLY ANNOUNCED.</p>
+      <p class="body-copy">There are <span class="inline-number">7</span> in operation at the moment, each established within a specific context and maintained with discretion. Their presence is intentional, shaped by location rather than visibility. Access is considered, not assumed.</p>
+      <p class="see-nearby">See if<br>Nearby /</p>
+      <img class="map-boat" src="assets/favicon.svg" alt="" aria-hidden="true">
+      <a href="#footer" class="btn btn-dark">SEEK ADMISSION</a>
+    </div>
+  </section>
+
+  <!-- OBJECTS -->
+  <section class="section-light objects" id="objects">
+    <h2 class="eyebrow-heading">THESE ITEMS ARE FORMED<br>WITHIN THE PLACES THEMSELVES.</h2>
+    <p class="objects-sub">EACH ORIGINATES ON SITE,<br>SHAPED BY MATERIAL, PROCESS,<br>AND CIRCUMSTANCE.</p>
+
+    <!-- OBJECTS CAROUSEL -->
+    <div class="carousel objects-carousel" id="objectsCarousel">
+      <div class="carousel-track">
+        <figure class="carousel-slide">
+          <img src="assets/images/objects/fox-spirit.svg" alt="The Fox Spirit">
+          <figcaption>(V) The Fox Spirit</figcaption>
+          <p class="object-note">Once completed, they leave their point of origin and circulate independently.</p>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="assets/images/objects/antler-guardian.svg" alt="Antler Guardian">
+          <figcaption>(IV) Antler Guardian</figcaption>
+          <p class="object-note">Formed on site, each piece carries the marks of its origin forward.</p>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="assets/images/objects/village-dolls.svg" alt="Village Dolls">
+          <figcaption>(III) Village Dolls</figcaption>
+          <p class="object-note">A set, never sold apart, kept together by design.</p>
+        </figure>
+        <figure class="carousel-slide">
+          <img src="assets/images/objects/crescent-vessel.svg" alt="Crescent Vessel">
+          <figcaption>(II) Crescent Vessel</figcaption>
+          <p class="object-note">Shaped by hand, tied to a single place and season.</p>
+        </figure>
+      </div>
+      <button class="carousel-arrow carousel-prev" aria-label="Previous">&larr;</button>
+      <button class="carousel-arrow carousel-next" aria-label="Next">&rarr;</button>
+      <span class="carousel-counter"><span class="carousel-current">1</span>/<span class="carousel-total">4</span></span>
+    </div>
+    <a href="#objectsCarousel" class="btn btn-light">EXPLORE OBJECTS <span class="dot"></span></a>
+  </section>
+
+  <!-- THE CONNECTION -->
+  <section class="section-connection">
+    <img class="connection-bg" src="assets/images/connection-bg.svg" alt="Concrete interior with garden view">
+    <img class="connection-thumb" src="assets/images/objects/antler-guardian.svg" alt="Antler figure holding a small companion">
+    <h2 class="display-heading connection-title">The<br>Connection</h2>
+  </section>
+
+  <section class="section-light connection-copy">
+    <p class="body-copy large">Places and Items are not separate. Each item originates within a specific place, shaped by its conditions, materials, and use.</p>
+    <p class="body-copy indent">Once removed, the item continues independently, carrying its point of origin without representing it directly.</p>
+    <img class="fox-icon" src="assets/images/objects/crescent-vessel.svg" alt="" aria-hidden="true">
+  </section>
+
+  <!-- UPDATES -->
+  <section class="section-light updates">
+    <h2 class="display-heading">Updates</h2>
+    <p class="sub-heading center">Now Forming</p>
+
+    <div class="updates-grid">
+      <article class="update-card">
+        <img src="assets/images/updates/item-ii.svg" alt="Antler figure in the forest">
+        <p class="update-kind">Item release</p>
+        <p class="update-title">ITEM II – IN CIRCULATION</p>
+      </article>
+      <article class="update-card">
+        <img src="assets/images/updates/interior-v.svg" alt="Minimal interior with bonsai">
+        <p class="update-kind">Formation / Process</p>
+        <p class="update-title">INTERIOR V – FORMING</p>
+      </article>
+      <article class="update-card">
+        <img src="assets/images/updates/admission-cycle.svg" alt="Four figures on dark background">
+        <p class="update-kind">Admission-related</p>
+        <p class="update-title">ADMISSION CYCLE – OPEN</p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer" id="footer">
+  <div class="footer-topbar">
+    <span class="no-social">No Social Medias</span>
+  </div>
+
+  <div class="footer-panel">
+    <p class="footer-intro">Independent practice<br>operating across<br>locations.</p>
+
+    <svg class="footer-wire" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M -50 200 C 400 50, 700 150, 1250 350 C 900 480, 600 380, 60 620" />
+    </svg>
+
+    <nav class="footer-links">
+      <a href="#places"><span class="plus">+</span>Places</a>
+      <a href="#objects"><span class="plus">+</span>Objects</a>
+      <a href="#footer"><span class="plus">+</span>About</a>
+      <a href="#footer">Contacts</a>
+      <a href="#footer"><span class="plus">+</span>People</a>
+    </nav>
+
+    <p class="footer-repeat">Operating<br>Across<br>Locations.</p>
+
+    <div class="footer-bottom">
+      <p class="footer-legal">This website is an<br>expression of the<br>ImaginePossible initiative.</p>
+      <p class="footer-copyright">© 2026</p>
+      <p class="footer-credit">Website by Fiddle.Digital</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/carousel.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
