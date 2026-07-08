@@ -278,6 +278,10 @@ section { position: relative; padding: 90px 40px; }
 .teaser-stack img:nth-child(3) { top: 70px; right: 30px; opacity: .6; }
 .teaser-stack img:nth-child(4) { top: 100px; right: 150px; opacity: .4; }
 
+/* ---------- testimonials ---------- */
+.testimonials { text-align: center; padding-top: 60px; }
+.testimonials-carousel .carousel-slide img { max-width: 420px; margin: 0 auto; max-height: 65vh; }
+
 /* ---------- carousel ---------- */
 .carousel {
   position: relative;
@@ -500,6 +504,48 @@ section { position: relative; padding: 90px 40px; }
 }
 .footer-legal { max-width: 26ch; }
 
+/* ---------- founder page ---------- */
+.founder-hero { text-align: center; padding-bottom: 20px; }
+.heading-fade-dark {
+  display: block;
+  background: linear-gradient(180deg, var(--ink), transparent 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.founder-bio {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.founder-photo {
+  width: 380px;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+.founder-copy { flex: 1; min-width: 260px; }
+.founder-copy .eyebrow { margin-bottom: 10px; }
+.founder-copy .body-copy.large { font-family: var(--font-display); font-size: 32px; margin-bottom: 24px; }
+.founder-team {
+  position: relative;
+  padding: 0;
+  min-height: 70vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.founder-photo-wide { width: 100%; height: 70vh; object-fit: cover; }
+.founder-caption {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+}
+
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .main-nav, .tagline { display: none; }
@@ -515,4 +561,6 @@ section { position: relative; padding: 90px 40px; }
   .footer-links a:nth-child(5) { align-self: flex-start; margin: 0; }
   .connection-thumb { width: 160px; right: 20px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .founder-photo { width: 100%; }
+  .founder-bio { flex-direction: column; }
 }
