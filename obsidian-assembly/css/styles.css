@@ -345,11 +345,10 @@ section { position: relative; padding: 90px 40px; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 34px;
+  width: 34px;
   height: 34px;
-  padding: 0 8px;
   border: 1px solid var(--accent);
-  border-radius: 17px;
+  border-radius: 50%;
   margin: 0 6px;
   font-family: var(--font-serif);
 }
@@ -362,6 +361,7 @@ section { position: relative; padding: 90px 40px; }
   margin-left: auto;
   max-width: 12ch;
 }
+.map-boat { width: 60px; opacity: .6; margin-top: 30px; }
 .section-map .btn { position: absolute; right: 60px; bottom: 80px; }
 
 /* ---------- objects ---------- */
@@ -413,6 +413,7 @@ section { position: relative; padding: 90px 40px; }
 }
 .connection-copy { text-align: left; }
 .connection-copy .body-copy.indent { margin-top: 30px; }
+.fox-icon { width: 48px; margin-top: 30px; }
 
 /* ---------- updates ---------- */
 .updates { text-align: center; }
