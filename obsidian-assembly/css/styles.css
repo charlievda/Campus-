@@ -291,9 +291,17 @@ section { position: relative; padding: 90px 40px; }
 .carousel-track { position: relative; }
 .carousel-slide {
   margin: 0;
-  display: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s ease;
 }
-.carousel-slide.active { display: block; }
+.carousel-slide.active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+}
 .carousel-slide img {
   width: 100%;
   max-height: 70vh;

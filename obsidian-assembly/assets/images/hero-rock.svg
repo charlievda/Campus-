@@ -1,4 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
-  <rect width="100%" height="100%" fill="#0b0a08"/>
-  <text x="50%" y="50%" font-family="Georgia, serif" font-size="50" fill="#d9cbb0" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">Campus+ App</text>
+  <defs>
+    <linearGradient id="face1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a342c"/>
+      <stop offset="100%" stop-color="#151210"/>
+    </linearGradient>
+    <linearGradient id="face2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241f1a"/>
+      <stop offset="100%" stop-color="#0a0908"/>
+    </linearGradient>
+    <linearGradient id="face3" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a4238"/>
+      <stop offset="100%" stop-color="#1c1815"/>
+    </linearGradient>
+    <linearGradient id="face4" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#100e0c"/>
+      <stop offset="100%" stop-color="#050504"/>
+    </linearGradient>
+  </defs>
+  <polygon points="450,60 640,240 700,520 560,760 380,840 200,660 150,380 260,150" fill="url(#face1)"/>
+  <polygon points="450,60 260,150 200,660 380,840 460,520" fill="url(#face2)"/>
+  <polygon points="450,60 640,240 700,520 460,520" fill="url(#face3)"/>
+  <polygon points="380,840 460,520 700,520 560,760" fill="url(#face4)"/>
+  <polygon points="200,660 380,840 460,520 150,380" fill="#181410" opacity=".8"/>
+  <polygon points="450,60 460,520 640,240" fill="#55493c" opacity=".5"/>
 </svg>
