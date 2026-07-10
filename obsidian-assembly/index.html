@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <a href="#places">CAMPUSES</a>
     <span class="nav-divider"></span>
     <a href="#objects">FEATURES</a>
-    <a href="#footer" class="send-request">GET THE APP</a>
+    <a href="#get-access" class="send-request">GET THE APP</a>
   </nav>
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
@@ -58,7 +58,7 @@
 
     <p class="hero-commitment">One .edu Email,<br>Full Access /</p>
 
-    <a href="#footer" class="btn btn-light">GET THE APP <span class="dot"></span></a>
+    <a href="#get-access" class="btn btn-light">GET THE APP <span class="dot"></span></a>
     <span class="footer-tag">.EDU VERIFIED · iOS</span>
   </section>
 
@@ -101,7 +101,7 @@
       <p class="body-copy">There are <span class="inline-number">200+</span> campuses live or pre-ordering right now, each one unlocked once enough .edu-verified students join. Availability expands every semester, campus by campus.</p>
       <p class="see-nearby">See if<br>Yours is Live /</p>
       <img class="map-boat" src="assets/favicon.svg" alt="" aria-hidden="true">
-      <a href="#footer" class="btn btn-dark">FIND YOUR CAMPUS</a>
+      <a href="#get-access" class="btn btn-dark">FIND YOUR CAMPUS</a>
     </div>
   </section>
 
@@ -210,6 +210,16 @@
         <p class="update-kind">Membership</p>
         <p class="update-title">CAMPUS+ SUBSCRIPTION – $7.99/MO</p>
       </article>
+      <article class="update-card">
+        <img src="assets/images/testimonials/group-banner.jpg" alt="Group of students holding a Campus Plus+ banner">
+        <p class="update-kind">Community</p>
+        <p class="update-title">STUDENT AMBASSADOR PROGRAM – LAUNCHING</p>
+      </article>
+      <article class="update-card">
+        <img src="assets/images/testimonials/wallet-guy.jpg" alt="Student showing the Campus+ Wallet screen">
+        <p class="update-kind">Payments</p>
+        <p class="update-title">STRIPE PAYOUTS – LIVE</p>
+      </article>
     </div>
   </section>
 
@@ -221,6 +231,20 @@
     </div>
     <p class="body-copy formed-by-copy">Campus+ is shaped by a small team working across campuses and time zones — students building the tool they wished existed.</p>
     <a href="about-founder.html" class="btn btn-light">MEET THE FOUNDER <span class="dot"></span></a>
+  </section>
+
+  <!-- GET ACCESS -->
+  <section class="get-access" id="get-access">
+    <img class="get-access-bg" src="assets/images/campuses/usc-sunset.jpg" alt="" aria-hidden="true">
+    <div class="get-access-panel">
+      <h2 class="display-heading">Get<br>Access</h2>
+      <p class="body-copy">One .edu email is all it takes. Check if your campus is live, or join the waitlist to bring Campus+ to yours.</p>
+      <form class="get-access-form" onsubmit="return false;">
+        <input type="email" placeholder="you@youruniversity.edu" aria-label="School email" required>
+        <button type="submit" class="btn btn-dark">REQUEST ACCESS</button>
+      </form>
+      <p class="get-access-note">No spam. No public profile until you say so.</p>
+    </div>
   </section>
 
 </main>
