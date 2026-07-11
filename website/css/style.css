@@ -21,21 +21,7 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Switzer';
-  src: url('../fonts/Switzer-Regular.woff2') format('woff2'),
-       url('../fonts/Switzer-Regular.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Switzer';
-  src: url('../fonts/Switzer-Medium.woff2') format('woff2'),
-       url('../fonts/Switzer-Medium.woff') format('woff');
-  font-weight: 500;
-  font-display: swap;
-}
+/* Switzer loads from Fontshare's CDN (see <head> link) — no local @font-face needed. */
 
 :root {
   /* Brand colors */
@@ -211,16 +197,15 @@ section { position: relative; }
 
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
 .nav-toggle span { width: 22px; height: 2px; background: var(--white); border-radius: 2px; }
+.mobile-cta { display: none; }
 
 @media (max-width: 860px) {
   .nav-links { position: fixed; inset: 0; top: 64px; background: var(--navy); flex-direction: column; justify-content: flex-start; padding: 40px 32px; gap: 26px; font-size: 1.15rem; transform: translateX(100%); transition: transform 0.3s ease; }
   .nav-links.is-open { transform: translateX(0); }
   .nav-cta { display: none; }
-  .nav-links.is-open ~ .nav-cta,
-  .nav-links.is-open .mobile-cta { display: flex; }
   .nav-toggle { display: flex; }
-  .mobile-cta { display: none; margin-top: 8px; }
-  .nav-links.is-open .mobile-cta { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .mobile-cta { margin-top: 8px; flex-direction: column; gap: 12px; width: 100%; }
+  .nav-links.is-open .mobile-cta { display: flex; }
 }
 
 /* ---------- Scroll Hero ---------- */
@@ -238,8 +223,6 @@ section { position: relative; }
   top: 0;
   height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
 }
 .hero-scroll__media {
   position: absolute;
@@ -274,27 +257,38 @@ section { position: relative; }
   background: linear-gradient(0deg, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.35) 42%, rgba(10,22,40,0.55) 100%);
 }
 
-.hero-scroll__intro {
-  position: relative;
-  z-index: 2;
+.hero-scroll__intro,
+.hero-scroll__panel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  padding: 0 24px 0;
   max-width: var(--container);
-  margin: 0 auto;
-  align-self: center;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.hero-scroll__intro {
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
+.hero-scroll.is-intro .hero-scroll__intro { opacity: 1; pointer-events: auto; }
 .hero-scroll__intro h1 { max-width: 780px; margin: 0 auto 0.4em; }
 .hero-scroll__intro .lede { margin: 0 auto 2em; color: rgba(255,255,255,0.7); }
 
 .hero-scroll__panel {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  padding: 0 24px 74px;
-  max-width: var(--container);
-  margin: 0 auto;
+  justify-content: flex-end;
+  padding-bottom: 74px;
 }
+.hero-scroll:not(.is-intro) .hero-scroll__panel.is-active { opacity: 1; pointer-events: auto; }
 .hero-scroll__tabs {
   display: flex;
   gap: 8px;

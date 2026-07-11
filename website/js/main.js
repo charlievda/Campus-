@@ -115,6 +115,8 @@ function initScrollHero() {
     progressEls.forEach((el, i) => el.classList.toggle('is-active', i === index));
   };
 
+  const introThreshold = 1 / (panelCount * 4); // fraction of track scrolled before panels take over
+
   const update = () => {
     const rect = track.getBoundingClientRect();
     const scrolled = -rect.top;
@@ -122,8 +124,10 @@ function initScrollHero() {
     const progress = Math.min(Math.max(scrolled / Math.max(total, 1), 0), 1);
     const index = Math.min(panelCount - 1, Math.floor(progress * panelCount));
     setActive(index);
+    hero.classList.toggle('is-intro', progress < introThreshold);
   };
 
+  hero.classList.add('is-intro');
   setActive(0);
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
