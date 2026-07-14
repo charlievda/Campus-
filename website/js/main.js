@@ -270,14 +270,17 @@
 
   /* ---------- pinned scroll-scrubbed sections ---------- */
   function initPinnedSequences() {
-    var placesStory = document.querySelector('.c-places .places-story');
-    if (placesStory) {
+    // Places: the sticky positioning is CSS-native (position:sticky on
+    // .sticky-container, which sits in a 400vh-tall parent) - no GSAP
+    // pin/spacer needed. We only need to scrub scroll progress across
+    // that tall parent to pick the active step.
+    var placesStickyParent = document.querySelector('.c-places .places-story .-w');
+    if (placesStickyParent) {
       ScrollTrigger.create({
-        trigger: placesStory,
+        trigger: placesStickyParent,
         start: 'top top',
-        end: '+=200%',
-        pin: true,
-        scrub: 1,
+        end: 'bottom bottom',
+        scrub: true,
         onUpdate: function (self) {
           var count = collectSequenceSteps('places-sequencer');
           var step = Math.min(count - 1, Math.floor(self.progress * count));
@@ -291,13 +294,18 @@
 
     document.querySelectorAll('[data-string="progress"]').forEach(function (el) {
       var key = el.getAttribute('data-string-key') || '--progress';
-      var easing = el.getAttribute('data-string-easing');
       var offsetTop = el.getAttribute('data-string-offset-top') || '0%';
       var offsetBottom = el.getAttribute('data-string-offset-bottom') || '0%';
+      // Sections already visible at page load (the hero) should start
+      // their progress at 0 at rest, not partway through, since there's
+      // nothing to "enter" - use top/top framing for those.
+      var atTopOfPage = el.getBoundingClientRect().top + window.scrollY < 10;
+      var start = atTopOfPage ? 'top top' : 'top bottom+=' + offsetTop;
+      var end = atTopOfPage ? 'bottom top' : 'bottom top+=' + offsetBottom;
       ScrollTrigger.create({
         trigger: el,
-        start: 'top bottom+=' + offsetTop.replace('%', '%'),
-        end: 'bottom top+=' + offsetBottom.replace('%', '%'),
+        start: start,
+        end: end,
         scrub: true,
         onUpdate: function (self) {
           document.documentElement.style.setProperty(key, self.progress.toFixed(4));
@@ -320,11 +328,52 @@
           onUpdate: function (self) {
             var local = gsap.utils.clamp(0, 1, (self.progress - start) / (end - start));
             el.style.setProperty('--local-progress', local.toFixed(4));
-            gsap.set(el, { opacity: 0.15 + local * 0.85, y: (1 - local) * 40 });
           }
         });
       });
     }
+
+    initObjectsCardCycle();
+  }
+
+  var objectNames = ['(V) The Fox Spirit', '(II) The Still Water', '(III) The Paper Lantern', '(I) The Robin'];
+  function initObjectsCardCycle() {
+    var container2 = document.querySelector('.sticky-container-2');
+    var sequence = document.querySelector('.c-objects .sequence');
+    var wrappers = document.querySelectorAll('.c-objects .object-wrapper');
+    if (!container2 || !sequence || !wrappers.length) return;
+
+    sequence.classList.add('-sequence-cards');
+    var baseOrders = Array.prototype.map.call(wrappers, function (el) {
+      return parseInt(el.style.getPropertyValue('--order'), 10) || 0;
+    });
+    var count = wrappers.length;
+    var label = document.querySelector('.c-objects .place-name');
+    var orderNum = document.querySelector('.c-objects .sequesnce-nav .order span span:first-child');
+
+    function setActive(index) {
+      wrappers.forEach(function (el, i) {
+        var seqOrder = baseOrders[i] - index;
+        el.style.setProperty('--sequence-order', seqOrder);
+        el.classList.toggle('-active', seqOrder === 0);
+        el.classList.toggle('-under', seqOrder === 1);
+      });
+      if (label) label.textContent = objectNames[index] || objectNames[0];
+      if (orderNum) orderNum.textContent = index + 1;
+    }
+
+    setActive(0);
+
+    ScrollTrigger.create({
+      trigger: container2,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      onUpdate: function (self) {
+        var index = Math.min(count - 1, Math.floor(self.progress * count));
+        setActive(index);
+      }
+    });
   }
 
   /* ---------- header state ---------- */

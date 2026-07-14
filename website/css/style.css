@@ -3211,7 +3211,7 @@
     }
 
     .c-places-after .figure-map[data-v-e539f811]:before {
-        background-color: var(--c-black);
+        display: none;
         content: "";
         display: block;
         height: calc(var(--vw, 1vw) * 12);
@@ -5430,7 +5430,7 @@ footer .-w.block[data-v-a41b36d1] {
 }
 
 footer .-w.block[data-v-a41b36d1]:before {
-    background-color: var(--c-white);
+    display: none !important;
     bottom: calc(100% - 1px);
     -webkit-mask: none;
     mask: none;
@@ -5454,7 +5454,7 @@ footer .-w.block[data-v-a41b36d1]:after, footer .-w.block[data-v-a41b36d1]:befor
 }
 
 footer .-w.block[data-v-a41b36d1]:after {
-    background-color: var(--c-yellow);
+    display: none !important;
     -webkit-mask: none;
     mask: none;
     -webkit-mask-position: bottom;
