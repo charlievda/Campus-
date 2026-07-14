@@ -2278,7 +2278,7 @@
         z-index: 40
     }
     .c-welcome[data-v-6c6a6d99] {
-        background-image: linear-gradient(180deg, var(--c-stone), var(--c-black));
+        background-image: linear-gradient(180deg, var(--c-brown), var(--c-black));
         background-position: top;
         background-repeat: no-repeat;
         background-size: auto 100%;
@@ -3409,7 +3409,8 @@
         }
     }
     .c-objects[data-v-99613b87] {
-        background-image: linear-gradient(160deg, var(--c-stone), var(--c-black));
+        background-color: var(--c-yellow);
+        background-image: none;
         background-position: center 25%;
         background-repeat: no-repeat;
         background-size: 400% auto;
