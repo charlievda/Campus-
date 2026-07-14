@@ -258,7 +258,7 @@
     });
   }
 
-  var placeNames = ['Silent Room', 'Lower Hall', 'Interior III', 'Silent Room', 'Interior V', 'Interior VI', 'Interior VII'];
+  var placeNames = ['Lower Hall', 'The Atrium', 'The Passage', 'Silent Room', 'The Threshold', 'The Vault', 'Back Space'];
   function updatePlacesLabel() {
     var seq = sequencers['places-sequencer'];
     if (!seq) return;
