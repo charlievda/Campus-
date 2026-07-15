@@ -280,13 +280,13 @@
     });
   }
 
-  var placeNames = ['Lower Hall', 'The Atrium', 'The Passage', 'Silent Room', 'The Threshold', 'The Vault', 'Back Space'];
+  var placeNames = ['Marketplace', 'Gigs', 'Messages', 'Wallet'];
   function updatePlacesLabel() {
     var seq = sequencers['places-sequencer'];
     if (!seq) return;
     var label = document.querySelector('.c-places .place-name span');
     var order = document.querySelector('.c-places .sequesnce-nav .order span span:first-child');
-    if (label) label.textContent = placeNames[seq.step] || 'Silent Room';
+    if (label) label.textContent = placeNames[seq.step] || 'Marketplace';
     if (order) order.textContent = seq.step + 1;
   }
 
@@ -368,7 +368,7 @@
     initObjectsCardCycle();
   }
 
-  var objectNames = ['(V) The Fox Spirit', '(II) The Still Water', '(III) The Paper Lantern', '(I) The Robin'];
+  var objectNames = ['Clothes & Rentals', 'Furniture', 'Textbooks & Books', 'Electronics', 'Accessories', 'Household Items'];
   function initObjectsCardCycle() {
     var container2 = document.querySelector('.sticky-container-2');
     var sequence = document.querySelector('.c-objects .sequence');
@@ -478,9 +478,12 @@
       btn.addEventListener('click', function () { closeOverlay(modal, '-t-submission'); });
     });
     document.querySelectorAll('.js-scroll-to').forEach(function (btn) {
-      btn.addEventListener('click', function () {
+      btn.addEventListener('click', function (e) {
         var target = document.querySelector(btn.getAttribute('data-target'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
   }

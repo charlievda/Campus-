@@ -2525,7 +2525,7 @@
     }
 
     .c-welcome .-w .places[data-v-6c6a6d99]:after {
-        content: "P."
+        content: "M."
     }
 
     .c-welcome .-w .items[data-v-6c6a6d99] {
@@ -2535,7 +2535,7 @@
     }
 
     .c-welcome .-w .items[data-v-6c6a6d99]:after {
-        content: "I."
+        content: "G."
     }
 
     .c-welcome .welcome-path[data-v-6c6a6d99] {
@@ -4493,6 +4493,7 @@
     }
 
     .c-people .-w[data-v-95ef3e57] {
+        padding-bottom: calc(var(--vw, 1vw) * 25);
         padding-top:var(--h1)
     }
 
@@ -4633,6 +4634,13 @@
         --top: 4;
         --left: 4;
         --width:3
+    }
+
+    .c-people .-w .button-wrap[data-v-95ef3e57] {
+        justify-self: center;
+        margin-top: var(--h4);
+        position: relative;
+        z-index: 2;
     }
 
     .c-people .people-path-a[data-v-95ef3e57] {
