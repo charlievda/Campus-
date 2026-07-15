@@ -302,6 +302,13 @@
       var atTopOfPage = el.getBoundingClientRect().top + window.scrollY < 10;
       var start = atTopOfPage ? 'top top' : 'top bottom+=' + offsetTop;
       var end = atTopOfPage ? 'bottom top' : 'bottom top+=' + offsetBottom;
+      // The Objects section title (sticky-container-1) spreads its two
+      // words apart as this progress goes 0->1. The object cards should
+      // stay in their spread-out, fading-in layout for that whole time,
+      // then converge into the centered stacked cycle only once the
+      // words have essentially finished spreading.
+      var isObjectsTitle = el.classList.contains('sticky-container-1');
+      var objectsSequence = isObjectsTitle ? document.querySelector('.c-objects .sequence') : null;
       ScrollTrigger.create({
         trigger: el,
         start: start,
@@ -310,6 +317,9 @@
         onUpdate: function (self) {
           document.documentElement.style.setProperty(key, self.progress.toFixed(4));
           el.style.setProperty(key, self.progress.toFixed(4));
+          if (objectsSequence) {
+            objectsSequence.classList.toggle('-sequence-cards', self.progress > 0.85);
+          }
         }
       });
     });
@@ -343,7 +353,6 @@
     var wrappers = document.querySelectorAll('.c-objects .object-wrapper');
     if (!container2 || !sequence || !wrappers.length) return;
 
-    sequence.classList.add('-sequence-cards');
     var baseOrders = Array.prototype.map.call(wrappers, function (el) {
       return parseInt(el.style.getPropertyValue('--order'), 10) || 0;
     });

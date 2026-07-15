@@ -3470,8 +3470,9 @@
 
     .c-objects .-w .sequence .object-wrapper .object-holder figure[data-v-99613b87] {
         border-radius: .4rem;
-        opacity: calc(var(--progress-slice) * 2);
-        scale: calc(.5 + var(--progress-slice) /2);
+        opacity: calc(var(--local-progress, 0) * 2);
+        scale: calc(.5 + var(--local-progress, 0) /2);
+        transition: opacity .3s linear, scale .3s linear;
         translate: 0 calc(var(--vh, 1vh) * 2 - var(--local-progress) * var(--vh, 1vh) * 4);
         width:100%
     }
@@ -3504,6 +3505,12 @@
         transform: translateZ(0) scale(1);
         translate: 0 calc(var(--sequence-order) * var(--vh, 1vh) * 12);
         z-index:calc(20 - abs(var(--sequence-order)))
+    }
+
+    .c-objects .-w .sequence.-sequence-cards .object-wrapper .object-holder figure[data-v-99613b87] {
+        opacity: 1;
+        scale: 1;
+        translate:0
     }
 
     .c-objects .-w .sequence.-sequence-cards .object-wrapper.-under[data-v-99613b87] {
