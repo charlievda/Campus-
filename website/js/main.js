@@ -1,5 +1,19 @@
 (function () {
   gsap.registerPlugin(ScrollTrigger);
+  // iOS Safari's address bar/toolbar resizes the viewport as you scroll,
+  // which makes the native 1vh unit jump around - this site has many
+  // 400vh/600vh scroll-driven sections that need a stable vh. Measure it
+  // in JS instead and let ignoreMobileResize skip the toolbar-only resize
+  // events (width unchanged) so ScrollTrigger doesn't thrash on every
+  // address-bar show/hide.
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  function setVH() {
+    document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+  }
+  setVH();
+  window.addEventListener('resize', setVH);
+  window.addEventListener('orientationchange', setVH);
+
   var html = document.documentElement;
   var EASE = {
     cubic: 'cubic-bezier(0.35,0.35,0,1)',
@@ -56,9 +70,17 @@
 
   function wrapLines(el) {
     var words = el.textContent.trim().split(/\s+/);
+    var elWidth = el.getBoundingClientRect().width;
     var temp = document.createElement('span');
     temp.style.visibility = 'hidden';
     temp.style.position = 'absolute';
+    // Constrain to the element's actual rendered width - without this an
+    // absolutely-positioned temp span falls back to the viewport's width
+    // as its containing block, so line breaks get measured against the
+    // full page width instead of the (usually much narrower) column the
+    // text really wraps in, and the real text overflows its container.
+    temp.style.width = elWidth + 'px';
+    temp.style.display = 'block';
     el.textContent = '';
     var wordSpans = words.map(function (w) {
       var s = document.createElement('span');

@@ -1298,6 +1298,20 @@
         transition:transform 1.5s var(--f-fast)
     }
 
+    @media (max-width: 1023px) {
+        header .-w[data-v-81ce8483] .places,
+        header .-w[data-v-81ce8483] .objects,
+        header .-w[data-v-81ce8483] .request,
+        header .-w .sep[data-v-81ce8483] {
+            display: none;
+        }
+
+        header .-w .menu-wrap[data-v-81ce8483] {
+            --left: 5;
+            --width: 2;
+        }
+    }
+
     @media (min-width: 1024px) {
         header .-w a[data-v-81ce8483]:hover {
             color:var(--c-white)
