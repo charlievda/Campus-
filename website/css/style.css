@@ -4463,6 +4463,108 @@
             margin-top: calc(var(--h1) + var(--h3))
         }
     }
+
+    .c-updates .updates-carousel[data-v-e764b164] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .updates-carousel .updates-track {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: calc(var(--vh, 1vh) * 42);
+        margin-top: var(--h4);
+        position: relative;
+        width: 100%;
+    }
+
+    .updates-carousel .update-slide {
+        --dist: 0;
+        --absdist: 0;
+        aspect-ratio: 3/4;
+        background: none;
+        border: none;
+        border-radius: .5rem;
+        cursor: pointer;
+        height: 70%;
+        left: 50%;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%) translateX(calc(var(--dist) * 44%)) scale(calc(1 - var(--absdist) * 0.22));
+        transition: transform .6s var(--f-cubic), opacity .6s var(--f-cubic), z-index 0s;
+        opacity: calc(1 - var(--absdist) * 0.4);
+        z-index: calc(10 - var(--absdist));
+    }
+
+    .updates-carousel .update-slide figure,
+    .updates-carousel .update-slide img {
+        height: 100%;
+        width: 100%;
+    }
+
+    .updates-carousel .update-status {
+        display: block;
+        margin-top: var(--h4);
+        text-align: center;
+        color: var(--c-brown);
+    }
+
+    .updates-carousel .update-title {
+        display: block;
+        text-align: center;
+    }
+
+    .updates-carousel .update-caption {
+        margin-top: var(--h6);
+        max-width: 26rem;
+        text-align: center;
+    }
+
+    .updates-carousel .sequence-nav {
+        align-items: center;
+        display: flex;
+        gap: .6rem;
+        justify-content: center;
+        margin-top: var(--h4);
+    }
+
+    .updates-carousel .sequence-nav .num {
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        background: rgba(21, 20, 21, .2);
+        transition: background .3s var(--f-cubic);
+    }
+
+    .updates-carousel .sequence-nav .num.-active {
+        background: var(--c-black);
+    }
+
+    .updates-carousel .sequence-nav .arrow {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: .4rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .updates-carousel .sequence-nav .arrow svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--c-black);
+    }
+
+    @media (min-width: 1024px) {
+        .updates-carousel .updates-track {
+            max-width: 60rem;
+        }
+    }
+
     .c-people[data-v-95ef3e57] {
         background-color: var(--c-yellow);
         box-shadow: 0 2px 0 0 var(--c-black);

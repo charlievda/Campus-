@@ -407,6 +407,60 @@
     });
   }
 
+  /* ---------- updates carousel ---------- */
+  var updatesContent = [
+    { status: 'Marketplace', title: 'Buy & Sell', caption: 'List anything from textbooks to furniture, and buy directly from verified students at your school.' },
+    { status: 'Marketplace', title: 'Rent From Peers', caption: 'Skip the one-time purchase - rent formalwear, gear, and more straight from other students, then return it when you’re done.' },
+    { status: 'Community', title: 'Founder & Ambassador Program', caption: 'Referral-driven programs reward the students helping Campus Plus+ grow at their own school.' },
+    { status: 'Discovery', title: 'The Map', caption: 'Scan the map to see items and gigs available on your campus, visually, in real time.' },
+    { status: 'Growth', title: '1 Campus to 200+', caption: 'Campus Plus+ has spread from a single campus to over 200 nationwide in just a few months.' }
+  ];
+
+  function initUpdatesCarousel() {
+    var track = document.getElementById('updates-track');
+    if (!track) return;
+    var slides = Array.prototype.slice.call(track.querySelectorAll('.update-slide'));
+    var count = slides.length;
+    var statusEl = document.getElementById('update-status');
+    var titleEl = document.getElementById('update-title');
+    var captionEl = document.getElementById('update-caption');
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.updates-carousel .sequence-nav .num'));
+    var current = 0;
+
+    function render() {
+      slides.forEach(function (slide, i) {
+        var dist = i - current;
+        if (dist > count / 2) dist -= count;
+        if (dist < -count / 2) dist += count;
+        slide.style.setProperty('--dist', dist);
+        slide.style.setProperty('--absdist', Math.abs(dist));
+      });
+      dots.forEach(function (dot, i) { dot.classList.toggle('-active', i === current); });
+      var data = updatesContent[current] || updatesContent[0];
+      if (statusEl) statusEl.textContent = data.status;
+      if (titleEl) titleEl.textContent = data.title;
+      if (captionEl) captionEl.textContent = data.caption;
+    }
+
+    function goTo(index) {
+      current = ((index % count) + count) % count;
+      render();
+    }
+
+    var prevBtn = document.getElementById('updates-prev');
+    var nextBtn = document.getElementById('updates-next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
+    slides.forEach(function (slide, i) {
+      slide.addEventListener('click', function () { goTo(i); });
+    });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    render();
+  }
+
   /* ---------- header state ---------- */
   function initHeader() {
     var header = document.querySelector('header[data-v-81ce8483]');
@@ -569,6 +623,7 @@
     initOverlays();
     initForms();
     initLazyImages();
+    initUpdatesCarousel();
     initPageTransition();
   });
 })();

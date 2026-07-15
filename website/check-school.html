@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Is Your School Live? — Campus Plus+</title>
+<meta name="theme-color" content="#f1eade">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151415'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23f1eade' text-anchor='middle'%3EC%2B%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Check whether Campus Plus+ is live at your school.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .cs-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
+  .cs-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem;max-width:40rem;margin:0 auto;}
+  .cs-header a.logo{font-family:var(--font-t-1);font-size:1.4rem;color:var(--c-black);text-decoration:none;}
+  .cs-header a.back{color:var(--c-brown);text-decoration:none;font-size:.95rem;}
+  .cs-header a.back:hover{text-decoration:underline;}
+  .cs-main{max-width:34rem;margin:3rem auto 6rem;padding:0 1.5rem;}
+  .cs-main h1{font-family:var(--font-t-2);font-size:clamp(2rem,6vw,2.8rem);line-height:1.1;margin:0 0 .8rem;}
+  .cs-main .lede{font-size:1.1rem;color:var(--c-brown);margin-bottom:2.5rem;}
+  .cs-form{display:flex;gap:.6rem;margin-bottom:1rem;}
+  .cs-form input{flex:1;font-size:1.1rem;padding:.9rem 1.1rem;border:2px solid rgba(21,20,21,.15);border-radius:.4rem;background:rgba(255,255,255,.5);color:var(--c-black);font-family:var(--font-b-regular);}
+  .cs-form input:focus{outline:none;border-color:var(--c-brown);}
+  .cs-form button{padding:.9rem 1.6rem;background:var(--c-black);color:var(--c-yellow);border:none;border-radius:.4rem;font-size:.9rem;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;}
+  .cs-form button:hover{background:var(--c-brown);}
+  .cs-suggestions{list-style:none;margin:0 0 2rem;padding:0;border-radius:.4rem;overflow:hidden;}
+  .cs-suggestions li{padding:.6rem 1rem;cursor:pointer;background:rgba(21,20,21,.03);border-bottom:1px solid rgba(21,20,21,.08);}
+  .cs-suggestions li:hover{background:rgba(123,81,54,.12);}
+  .cs-result{padding:1.4rem 1.5rem;border-radius:.5rem;margin-top:1.5rem;display:none;}
+  .cs-result.-live{background:rgba(60,140,80,.12);border-left:4px solid #3c8c50;}
+  .cs-result.-wait{background:rgba(123,81,54,.1);border-left:4px solid var(--c-brown);}
+  .cs-result h2{font-size:1.2rem;margin:0 0 .5rem;}
+  .cs-result p{margin:0 0 1rem;line-height:1.5;}
+  .cs-result .fp-cta{display:inline-block;padding:.7rem 1.4rem;background:var(--c-black);color:var(--c-yellow);text-decoration:none;border-radius:2rem;font-size:.85rem;letter-spacing:.03em;text-transform:uppercase;}
+  .cs-result .fp-cta:hover{background:var(--c-brown);}
+  .cs-note{font-size:.85rem;color:var(--c-brown);margin-top:2.5rem;}
+</style>
+</head>
+<body class="cs-page">
+
+<header class="cs-header">
+    <a href="/" class="logo">Campus Plus+</a>
+    <a href="/" class="back">&larr; Back to Home</a>
+</header>
+
+<main class="cs-main">
+    <h1>Is Your School Live?</h1>
+    <p class="lede">Campus Plus+ is active at 200+ campuses nationwide. Type your school below to check.</p>
+
+    <form class="cs-form" id="school-form" autocomplete="off">
+        <input type="text" id="school-input" placeholder="Type your school name&hellip;" aria-label="School name">
+        <button type="submit">Check</button>
+    </form>
+    <ul class="cs-suggestions" id="school-suggestions"></ul>
+
+    <div class="cs-result -live" id="result-live">
+        <h2>You&rsquo;re live! &#127881;</h2>
+        <p id="result-live-text"></p>
+        <a href="https://apps.apple.com/app/id6762578346" target="_blank" rel="noopener noreferrer" class="fp-cta">Get the App</a>
+    </div>
+
+    <div class="cs-result -wait" id="result-wait">
+        <h2>Not there yet &mdash; but we&rsquo;re expanding fast.</h2>
+        <p>We&rsquo;re adding new campuses every week. Enter your .edu email and we&rsquo;ll notify you the moment verification opens at your school.</p>
+        <form id="waitlist-form" style="display:flex;gap:.6rem;">
+            <input type="email" id="waitlist-email" placeholder="you@school.edu" required style="flex:1;font-size:1rem;padding:.7rem 1rem;border:2px solid rgba(21,20,21,.15);border-radius:.4rem;background:rgba(255,255,255,.6);font-family:var(--font-b-regular);">
+            <button type="submit" style="padding:.7rem 1.3rem;background:var(--c-black);color:var(--c-yellow);border:none;border-radius:.4rem;font-size:.85rem;text-transform:uppercase;cursor:pointer;">Notify Me</button>
+        </form>
+    </div>
+
+    <p class="cs-note">This is a quick lookup against our current campus list &mdash; if your school was just verified and isn&rsquo;t showing yet, <a href="mailto:support@joincampusplus.app">let us know</a>.</p>
+</main>
+
+<script>
+// NOTE: this is a representative sample of active campuses for the demo
+// lookup UI. Replace this array with the real, live campus list before
+// this page goes to production.
+var ACTIVE_SCHOOLS = [
+  'USC', 'University of Southern California', 'TCU', 'Texas Christian University',
+  'University of Utah', 'Utah', 'University of Georgia', 'Georgia', 'UCSB',
+  'UC Santa Barbara', 'UCLA', 'UC Berkeley', 'Berkeley', 'UC San Diego', 'UCSD',
+  'UC Irvine', 'UCI', 'Stanford', 'NYU', 'New York University', 'Boston University', 'BU',
+  'Boston College', 'Northeastern', 'University of Michigan', 'Michigan',
+  'Ohio State', 'Penn State', 'University of Texas', 'UT Austin', 'Texas A&M',
+  'Arizona State', 'ASU', 'University of Arizona', 'University of Florida', 'UF',
+  'Florida State', 'FSU', 'University of Miami', 'University of Washington', 'UW',
+  'Indiana University', 'University of Wisconsin', 'Wisconsin', 'University of Illinois',
+  'Purdue', 'University of Colorado', 'CU Boulder', 'University of Oregon',
+  'Oregon State', 'San Diego State', 'SDSU', 'Cal Poly', 'Chapman', 'Pepperdine',
+  'Loyola Marymount', 'LMU', 'University of San Diego', 'Vanderbilt', 'Tulane',
+  'University of Alabama', 'Alabama', 'Auburn', 'LSU', 'Ole Miss', 'University of Tennessee',
+  'Clemson', 'University of South Carolina', 'Virginia Tech', 'University of Virginia', 'UVA'
+];
+
+function normalize(s) { return s.trim().toLowerCase(); }
+
+function isActive(query) {
+  var q = normalize(query);
+  if (!q) return false;
+  return ACTIVE_SCHOOLS.some(function (s) { return normalize(s) === q || normalize(s).indexOf(q) !== -1 || q.indexOf(normalize(s)) !== -1; });
+}
+
+var input = document.getElementById('school-input');
+var suggestions = document.getElementById('school-suggestions');
+var resultLive = document.getElementById('result-live');
+var resultWait = document.getElementById('result-wait');
+var resultLiveText = document.getElementById('result-live-text');
+
+input.addEventListener('input', function () {
+  var q = normalize(input.value);
+  suggestions.innerHTML = '';
+  resultLive.style.display = 'none';
+  resultWait.style.display = 'none';
+  if (!q) return;
+  var matches = ACTIVE_SCHOOLS.filter(function (s) { return normalize(s).indexOf(q) !== -1; }).slice(0, 6);
+  matches.forEach(function (m) {
+    var li = document.createElement('li');
+    li.textContent = m;
+    li.addEventListener('click', function () {
+      input.value = m;
+      suggestions.innerHTML = '';
+      checkSchool(m);
+    });
+    suggestions.appendChild(li);
+  });
+});
+
+function checkSchool(name) {
+  suggestions.innerHTML = '';
+  if (isActive(name)) {
+    resultLiveText.textContent = 'Campus Plus+ is live at ' + name.trim() + '. Verify your .edu email in the app to get started.';
+    resultLive.style.display = 'block';
+    resultWait.style.display = 'none';
+  } else {
+    resultLive.style.display = 'none';
+    resultWait.style.display = 'block';
+  }
+}
+
+document.getElementById('school-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  checkSchool(input.value);
+});
+
+document.getElementById('waitlist-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button');
+  btn.textContent = 'You\'re on the list!';
+  btn.disabled = true;
+});
+</script>
+
+</body>
+</html>
