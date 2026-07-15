@@ -544,7 +544,8 @@
 
   /* ---------- form validation ---------- */
   function validateField(field) {
-    var errorBox = field.closest('.field, .agreement').querySelector('.string-errors');
+    var container = field.closest('.field, .agreement');
+    var errorBox = container ? container.querySelector('.string-errors') : null;
     var value = field.type === 'checkbox' ? field.checked : field.value.trim();
     var errors = [];
     if (field.hasAttribute('data-required') && !value) errors.push('This field is required');
@@ -567,8 +568,10 @@
         fields.forEach(function (f) { if (!validateField(f)) valid = false; });
         if (valid) {
           var modal = document.getElementById('submission-modal');
-          modal.style.display = '';
-          form.reset();
+          if (modal) {
+            modal.style.display = '';
+            form.reset();
+          }
         }
       });
       form.querySelectorAll('input, textarea').forEach(function (field) {

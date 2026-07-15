@@ -2525,7 +2525,7 @@
     }
 
     .c-welcome .-w .places[data-v-6c6a6d99]:after {
-        content: "M."
+        content: none
     }
 
     .c-welcome .-w .items[data-v-6c6a6d99] {
@@ -2535,7 +2535,7 @@
     }
 
     .c-welcome .-w .items[data-v-6c6a6d99]:after {
-        content: "G."
+        content: none
     }
 
     .c-welcome .welcome-path[data-v-6c6a6d99] {
@@ -4713,19 +4713,21 @@
     }
 
     .c-people .-w .arch .arch-inner figure[data-v-95ef3e57] {
-        align-self: end;
-        padding:40% 0
+        height: 100%;
     }
 
     .c-people .-w .arch .arch-inner figure[data-v-95ef3e57] img {
-        -o-object-fit: contain;
-        object-fit:contain
+        -o-object-fit: cover;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
     }
 
     .c-people .-w .caption[data-v-95ef3e57] {
         --top: 3;
         --left: 2;
         --width: 4;
+        color: var(--c-yellow);
         justify-content: center;
         margin-bottom: var(--h3);
         margin-top: var(--h1);
@@ -4735,7 +4737,8 @@
     .c-people .-w .tt-ending[data-v-95ef3e57] {
         --top: 4;
         --left: 4;
-        --width:3
+        --width: 3;
+        color: var(--c-yellow)
     }
 
     .c-people .-w .button-wrap[data-v-95ef3e57] {
