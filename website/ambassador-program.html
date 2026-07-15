@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Founder & Ambassador Programs — Campus Plus+</title>
+<title>Ambassador Program — Campus Plus+</title>
 <meta name="theme-color" content="#f1eade">
 <meta name="color-scheme" content="light">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151415'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23f1eade' text-anchor='middle'%3EC%2B%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Campus Plus+ Founder Program and Campus Ambassador Program — referral tiers, transaction bonuses, and fee structure.">
+<meta name="description" content="Campus Plus+ Ambassador Program and Founder Program — referral tiers, transaction bonuses, and fee structure.">
 <link rel="stylesheet" href="css/style.css">
 <style>
   .fp-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
@@ -31,8 +31,9 @@
   .fp-pricing .plan .period{font-size:.85rem;color:var(--c-brown);}
   .fp-tiers{list-style:none;margin:1.5rem 0;padding:0;counter-reset:tier;}
   .fp-tiers li{counter-increment:tier;position:relative;padding:.9rem 0 .9rem 3rem;border-bottom:1px solid rgba(21,20,21,.1);}
-  .fp-tiers li:before{content:counter(tier);position:absolute;left:0;top:.85rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--c-black);color:var(--c-yellow);display:flex;align-items:center;justify-content:center;font-size:.85rem;}
-  .fp-tiers li .name{font-weight:600;}
+  .fp-tiers li:before{content:counter(tier);position:absolute;left:0;top:.9rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--c-black);color:var(--c-yellow);display:flex;align-items:center;justify-content:center;font-size:.85rem;}
+  .fp-tiers li .name{font-weight:600;display:block;}
+  .fp-tiers li .detail{margin:.35rem 0 0;font-size:.92rem;color:var(--c-brown);line-height:1.5;}
   .fp-note{background:rgba(123,81,54,.08);border-left:3px solid var(--c-brown);padding:1rem 1.2rem;font-size:.92rem;border-radius:0 .3rem .3rem 0;margin:1.5rem 0;}
   .fp-cta{display:inline-block;margin-top:1rem;padding:.9rem 1.8rem;background:var(--c-black);color:var(--c-yellow);text-decoration:none;border-radius:2rem;font-size:.9rem;letter-spacing:.03em;text-transform:uppercase;}
   .fp-cta:hover{background:var(--c-brown);}
@@ -87,19 +88,20 @@
                 <a href="index.html" class="places" data-string="split" data-string-split="char" data-v-81ce8483>How It Works</a>
                 <a href="index.html" class="objects" data-string="split" data-string-split="char" data-v-81ce8483>Marketplace</a>
                 <a href="/about" class="about" data-string="split" data-string-split="char" data-v-81ce8483>About</a>
+                <a href="ambassador-program.html" class="ambassador" data-string="split" data-string-split="char" data-v-81ce8483>Ambassador Program</a>
                 <a href="mailto:support@joincampusplus.app" class="contacts" data-string="split" data-string-split="char" data-v-81ce8483>Contacts</a>
-                <a href="index.html" class="people" data-string="split" data-string-split="char" data-v-81ce8483>Founders</a>
+                <a href="founder.html" class="people" data-string="split" data-string-split="char" data-v-81ce8483>Founder</a>
             </nav>
         </div>
     </div>
 </div>
 
 <main class="fp-main">
-    <h1>Founder &amp; Ambassador Programs</h1>
+    <h1>Ambassador Program</h1>
     <p class="lede">Referral-driven programs for the students helping Campus Plus+ grow, campus by campus. Everything here — including how arrangements can end — is stated up front.</p>
 
     <h2>Fee Structure</h2>
-    <p>Every transaction on Campus Plus+ carries a small fee, split between both sides. Campus+ subscribers pay less on every Marketplace and Gigs transaction.</p>
+    <p>Every transaction on Campus Plus+ carries a small fee, split between both sides. Campus+ subscribers pay less on every Marketplace and Gigs transaction. See full <a href="pricing.html">Campus+ pricing</a> for subscription details.</p>
     <table class="fp-table">
         <thead>
             <tr><th>Plan</th><th>Marketplace</th><th>Gigs</th></tr>
@@ -110,23 +112,27 @@
         </tbody>
     </table>
 
-    <h2>Campus+ Subscription</h2>
-    <p>Campus+ is the paid membership tier (not the app name) &mdash; the value is purely fee reduction, so you keep more on every buy, sell, or gig.</p>
-    <div class="fp-pricing">
-        <div class="plan"><span class="amount">$2.49</span><span class="period">per week</span></div>
-        <div class="plan"><span class="amount">$7.99</span><span class="period">per month</span></div>
-        <div class="plan"><span class="amount">$59.99</span><span class="period">per year</span></div>
-    </div>
-    <p style="font-size:.85rem;color:var(--c-brown)">All plans auto-renew and share one subscription group.</p>
-
     <h2>Founder Program</h2>
-    <p>Four cumulative tiers, unlocked as the number of students you refer grows.</p>
+    <p>Four cumulative tiers, unlocked as the number of students you refer grows &mdash; each tier keeps the perks of the one before it.</p>
     <ol class="fp-tiers">
-        <li><span class="name">Launch Founder</span></li>
-        <li><span class="name">Revenue Share Partner</span></li>
-        <li><span class="name">Campus Founder</span></li>
-        <li><span class="name">Elite Campus Founder</span></li>
+        <li>
+            <span class="name">Launch Founder</span>
+            <p class="detail">Your entry point into the program. Start referring students at your school and begin building toward the next tier.</p>
+        </li>
+        <li>
+            <span class="name">Revenue Share Partner</span>
+            <p class="detail">Unlock an ongoing share of platform revenue generated by the students you've referred.</p>
+        </li>
+        <li>
+            <span class="name">Campus Founder</span>
+            <p class="detail">Recognized as a lead Founder for your campus, with added visibility and perks.</p>
+        </li>
+        <li>
+            <span class="name">Elite Campus Founder</span>
+            <p class="detail">The highest tier, reserved for the students driving the most referrals and growth at their school.</p>
+        </li>
     </ol>
+    <p style="font-size:.85rem;color:var(--c-brown)">Exact referral thresholds for each tier are being finalized &mdash; check back soon for the full breakdown.</p>
 
     <h2>Campus Ambassador Program</h2>
     <p>A separate program from Founders &mdash; a flat monthly bonus based on the transaction volume you drive on your campus.</p>
@@ -167,8 +173,9 @@
             <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl places" data-string="split" data-string-split="char" data-v-a41b36d1>How It Works</a>
             <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl objects" data-string="split" data-string-split="char" data-v-a41b36d1>Marketplace</a>
             <a href="/about" class="-h0 -mid-h1 -m-h2 -nl about" data-string="split" data-string-split="char" data-v-a41b36d1>About</a>
+            <a href="ambassador-program.html" class="-h0 -mid-h1 -m-h2 -nl ambassador" data-string="split" data-string-split="char" data-v-a41b36d1>Ambassador Program</a>
             <a href="mailto:support@joincampusplus.app" class="-h0 -mid-h1 -m-h2 -nl contacts" data-string="split" data-string-split="char" data-v-a41b36d1>Contacts</a>
-            <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl people" data-string="split" data-string-split="char" data-v-a41b36d1>Founders</a>
+            <a href="founder.html" class="-h0 -mid-h1 -m-h2 -nl people" data-string="split" data-string-split="char" data-v-a41b36d1>Founder</a>
         </nav>
         <span class="-m copy" data-v-a41b36d1>&copy; <span data-v-a41b36d1>2026</span></span>
     </div>

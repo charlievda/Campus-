@@ -4474,7 +4474,7 @@
         align-items: center;
         display: flex;
         justify-content: center;
-        height: calc(var(--vh, 1vh) * 42);
+        height: calc(var(--vh, 1vh) * 65);
         margin-top: var(--h4);
         position: relative;
         width: 100%;
@@ -4486,17 +4486,17 @@
         aspect-ratio: 3/4;
         background: none;
         border: none;
-        border-radius: .5rem;
+        border-radius: .6rem;
         cursor: pointer;
-        height: 70%;
+        height: 88%;
         left: 50%;
         overflow: hidden;
         padding: 0;
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%) translateX(calc(var(--dist) * 44%)) scale(calc(1 - var(--absdist) * 0.22));
+        transform: translate(-50%, -50%) translateX(calc(var(--dist) * 52%)) scale(calc(1 - var(--absdist) * 0.1));
         transition: transform .6s var(--f-cubic), opacity .6s var(--f-cubic), z-index 0s;
-        opacity: calc(1 - var(--absdist) * 0.4);
+        opacity: calc(1 - var(--absdist) * 0.22);
         z-index: calc(10 - var(--absdist));
     }
 
@@ -4508,49 +4508,63 @@
 
     .updates-carousel .update-status {
         display: block;
-        margin-top: var(--h4);
+        font-size: 1.1rem;
+        letter-spacing: .04em;
+        margin-top: var(--h3);
         text-align: center;
+        text-transform: uppercase;
         color: var(--c-brown);
     }
 
     .updates-carousel .update-title {
         display: block;
+        font-size: 2rem;
+        margin-top: .3rem;
         text-align: center;
     }
 
     .updates-carousel .update-caption {
-        margin-top: var(--h6);
-        max-width: 26rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        margin-top: var(--h5);
+        max-width: 34rem;
         text-align: center;
     }
 
     .updates-carousel .sequence-nav {
         align-items: center;
         display: flex;
-        gap: .6rem;
+        gap: 1.2rem;
         justify-content: center;
         margin-top: var(--h4);
     }
 
     .updates-carousel .sequence-nav .num {
-        width: .5rem;
-        height: .5rem;
+        align-items: center;
         border-radius: 50%;
-        background: rgba(21, 20, 21, .2);
-        transition: background .3s var(--f-cubic);
+        color: var(--c-black);
+        cursor: pointer;
+        display: flex;
+        font-size: 1.1rem;
+        height: 2.6rem;
+        justify-content: center;
+        background: rgba(21, 20, 21, .08);
+        transition: background .3s var(--f-cubic), color .3s var(--f-cubic);
+        width: 2.6rem;
     }
 
     .updates-carousel .sequence-nav .num.-active {
         background: var(--c-black);
+        color: var(--c-yellow);
     }
 
     .updates-carousel .sequence-nav .arrow {
         background: none;
         border: none;
         cursor: pointer;
-        padding: .4rem;
-        width: 2rem;
-        height: 2rem;
+        padding: .6rem;
+        width: 3.2rem;
+        height: 3.2rem;
     }
 
     .updates-carousel .sequence-nav .arrow svg {
@@ -4561,7 +4575,11 @@
 
     @media (min-width: 1024px) {
         .updates-carousel .updates-track {
-            max-width: 60rem;
+            max-width: 68rem;
+        }
+
+        .updates-carousel .update-title {
+            font-size: 2.6rem;
         }
     }
 
