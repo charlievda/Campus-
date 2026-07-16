@@ -1310,6 +1310,10 @@
             --left: 5;
             --width: 2;
         }
+
+        header[data-v-81ce8483] {
+            background-image: linear-gradient(180deg, rgba(var(--c-brown-rgb), .92) 0, rgba(var(--c-brown-rgb), .88) 30%, rgba(var(--c-brown-rgb), .7) 55%, rgba(var(--c-brown-rgb), .35) 75%, rgba(var(--c-brown-rgb), 0) 100%);
+        }
     }
 
     @media (min-width: 1024px) {
@@ -2448,6 +2452,16 @@
 
     .c-welcome .-w .stone.hero-phone-stone[data-v-6c6a6d99]:after {
         opacity: 0;
+    }
+
+    @media (max-width: 1023px) {
+        .c-welcome .-w .stone.hero-phone-stone[data-v-6c6a6d99] {
+            --top: 5;
+            --height: 3;
+            --left: 2;
+            --width: 4;
+            margin-top: 14vh;
+        }
     }
 
     .hero-phone-tilt {
@@ -3784,6 +3798,22 @@
         opacity: 0;
         position: absolute;
         transition:all 0s var(--f-cubic)
+    }
+
+    @media (max-width: 1023px) {
+        .c-objects .-w .sticky-container-2 .sticky .sequesnce-nav .place-name[data-v-99613b87] {
+            color: var(--c-white);
+            text-shadow: 0 .15rem .6rem rgba(21, 20, 21, .55), 0 .02rem .3rem rgba(21, 20, 21, .7);
+        }
+
+        .c-objects .-w .sticky-container-2 .sticky .sequesnce-nav nav[data-v-99613b87] {
+            border-top-color: rgba(var(--c-white-rgb), .5);
+        }
+
+        .c-objects .-w .sticky-container-2 .sticky .sequesnce-nav nav .order[data-v-99613b87] {
+            color: var(--c-white);
+            text-shadow: 0 .1rem .4rem rgba(21, 20, 21, .6);
+        }
     }
 
     @media (max-width: 1024px) {
@@ -5359,6 +5389,17 @@ figure.-fit img[data-v-ec47b9e2] {
     object-fit: cover;
     position: absolute;
     width: 100%
+}
+
+@media (max-width: 1023px) {
+    figure.-fit img[src*="how-it-works-sell"][data-v-ec47b9e2],
+    figure.-fit img[src*="how-it-works-rent"][data-v-ec47b9e2] {
+        object-position: 75% center;
+    }
+
+    figure.-fit img[src*="how-it-works-hire"][data-v-ec47b9e2] {
+        object-position: 25% center;
+    }
 }
 @charset "UTF-8";
 .field[data-v-8910626f] {
