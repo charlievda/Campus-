@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Payout Account Connected — Campus Plus+</title>
+<meta name="theme-color" content="#f1eade">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151415'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23f1eade' text-anchor='middle'%3EC%2B%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Your Stripe payout account is connected and verified on Campus Plus+.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+.cx-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
+.cx-main{max-width:34rem;margin:0 auto;padding:3rem 1.5rem 6rem;display:flex;align-items:center;justify-content:center;min-height:60vh;}
+.cx-card{background:var(--c-white);border-radius:1.5rem;padding:3rem 2.75rem;width:100%;text-align:center;box-shadow:0 1rem 3rem rgba(21,20,21,.08);}
+.cx-ring{width:5.5rem;height:5.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.6rem;position:relative;}
+.cx-ring:before{content:"";position:absolute;inset:-.5rem;border-radius:50%;border:1.5px solid rgba(21,20,21,.08);}
+.cx-ring-inner{width:3.4rem;height:3.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.cx-page h1{font-family:var(--font-t-2);font-size:clamp(1.7rem,4.5vw,2.2rem);line-height:1.12;margin:0 0 .75rem;}
+.cx-page .cx-sub{font-size:.98rem;color:var(--c-brown);line-height:1.65;margin-bottom:1.75rem;}
+.cx-info{background:rgba(123,81,54,.07);border:1px solid rgba(123,81,54,.18);border-radius:.85rem;padding:1rem 1.1rem;display:flex;gap:.75rem;text-align:left;margin-bottom:1.5rem;}
+.cx-info svg{flex-shrink:0;margin-top:.15rem;}
+.cx-info p{font-size:.82rem;color:var(--c-brown);line-height:1.6;margin:0;}
+.cx-info strong{color:var(--c-black);}
+.cx-prog{margin-bottom:1.5rem;text-align:left;}
+.cx-prog-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--c-brown);font-weight:600;margin-bottom:.5rem;}
+.cx-prog-bar{height:.25rem;background:rgba(21,20,21,.08);border-radius:.2rem;overflow:hidden;margin-bottom:.35rem;}
+.cx-prog-fill{height:100%;width:60%;background:var(--c-black);border-radius:.2rem;}
+.cx-prog-hint{font-size:.72rem;color:var(--c-brown);text-align:right;}
+.cx-steps{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.75rem;text-align:left;}
+.cx-step{display:flex;align-items:center;gap:.85rem;background:rgba(21,20,21,.03);border:1px solid rgba(21,20,21,.07);border-radius:.75rem;padding:.8rem .95rem;}
+.cx-snum{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--c-black);color:var(--c-yellow);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;flex-shrink:0;}
+.cx-si{width:2.4rem;height:2.4rem;border-radius:.7rem;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;background:rgba(21,20,21,.06);}
+.cx-stext{font-size:.85rem;color:#2a2a2a;line-height:1.45;}
+.cx-stext strong{color:var(--c-black);}
+.cx-st-title{font-size:.85rem;font-weight:600;color:var(--c-black);margin-bottom:.1rem;}
+.cx-st-sub{font-size:.76rem;color:var(--c-brown);line-height:1.4;}
+.cx-stats{display:flex;background:rgba(21,20,21,.03);border:1px solid rgba(21,20,21,.08);border-radius:.9rem;overflow:hidden;margin-bottom:1.75rem;}
+.cx-stat{flex:1;padding:1rem .5rem;text-align:center;border-right:1px solid rgba(21,20,21,.07);}
+.cx-stat:last-child{border-right:none;}
+.cx-sv{font-family:var(--font-t-1);font-size:1.25rem;line-height:1;margin-bottom:.3rem;}
+.cx-sl{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--c-brown);}
+.cx-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(21,20,21,.05);border:1px solid rgba(21,20,21,.12);border-radius:1.4rem;padding:.3rem 1rem;margin-bottom:1.25rem;}
+.cx-pill .sm{font-family:var(--font-t-1);font-size:.85rem;font-weight:600;}
+.cx-pill .st{font-size:.7rem;color:var(--c-brown);}
+.cx-btn-p{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;height:3.4rem;background:var(--c-black);color:var(--c-yellow);border:none;border-radius:1rem;font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;margin-bottom:.75rem;font-family:var(--font-b-medium);transition:background .2s;}
+.cx-btn-p:hover{background:var(--c-brown);}
+.cx-btn-p.-loading{opacity:.6;cursor:not-allowed;}
+.cx-btn-s{display:flex;align-items:center;justify-content:center;width:100%;height:2.9rem;background:transparent;border:1px solid rgba(21,20,21,.15);border-radius:1rem;font-size:.85rem;color:var(--c-brown);text-decoration:none;transition:all .2s;}
+.cx-btn-s:hover{border-color:rgba(21,20,21,.3);color:var(--c-black);}
+.cx-spin{width:1.1rem;height:1.1rem;border:2px solid rgba(241,234,222,.4);border-top-color:var(--c-yellow);border-radius:50%;animation:cx-spin .8s linear infinite;display:none;}
+@keyframes cx-spin{to{transform:rotate(360deg);}}
+@media (max-width:640px){.cx-card{padding:2.25rem 1.5rem;}}
+.cx-ring-inner svg{width:1.6rem;height:1.6rem;aspect-ratio:auto;fill:none;flex-shrink:0;}
+.cx-info svg{width:1.1rem;height:1.1rem;aspect-ratio:auto;fill:none;flex-shrink:0;}
+.cx-btn-p svg,.cx-btn-s svg{width:1rem;height:1rem;aspect-ratio:auto;fill:none;flex-shrink:0;}
+
+</style>
+</head>
+<body class="cx-page">
+
+<header data-v-81ce8483>
+    <div class="-w" data-v-81ce8483 data-v-e764b164>
+        <a href="index.html" class="-nl" data-v-81ce8483>
+            <span class="-h5 the" data-v-81ce8483>Campus</span>
+            <span class="-h5 assembly" data-v-81ce8483>Plus+</span>
+        </a>
+        <a href="index.html" class="button -p -m-m -reverse places" aria-label="How It Works" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>How It Works</span>
+        </a>
+        <span class="sep" data-v-81ce8483></span>
+        <a href="index.html" class="button -p -m-m -reverse objects" aria-label="Marketplace" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Marketplace</span>
+        </a>
+        <a href="https://apps.apple.com/app/id6762578346" target="_blank" rel="noopener noreferrer" class="-reverse request button -p -m-m" aria-label="Get the App" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Get the App</span>
+        </a>
+        <div class="menu-wrap" data-v-81ce8483>
+            <button type="button" class="menu button -p -m-m js-open-menu" aria-label="Menu" data-v-f52f19c3>
+                <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Menu</span>
+                <span class="menu-icon" data-v-81ce8483></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="full-screen-menu" style="display:none" data-v-81ce8483 id="site-menu">
+    <span class="overlay" data-v-81ce8483></span>
+    <div class="oy" data-v-81ce8483>
+        <div class="-w" data-v-81ce8483 data-v-e764b164>
+            <button type="button" class="button-close js-close-menu" aria-label="Close menu" data-v-81ce8483>
+                <span data-v-81ce8483>Close</span>
+            </button>
+            <span class="close js-close-menu" data-v-81ce8483></span>
+            <span class="underlay" data-v-81ce8483><div data-v-81ce8483></div></span>
+            <nav data-v-81ce8483>
+                <div class="guy" data-v-81ce8483>
+                    <figure data-v-81ce8483><img src="images/real/make_this_male_more_manly,_202605060937.jpeg" alt="Campus Plus+" data-v-81ce8483></figure>
+                    <span data-v-81ce8483><span data-string="split" data-string-split="char" data-v-81ce8483>Campus Plus+</span></span>
+                </div>
+                <a href="index.html" class="back-home" data-string="split" data-string-split="char" data-v-81ce8483>Home</a>
+                <a href="index.html" class="places" data-string="split" data-string-split="char" data-v-81ce8483>How It Works</a>
+                <a href="index.html" class="objects" data-string="split" data-string-split="char" data-v-81ce8483>Marketplace</a>
+                <a href="/about" class="about" data-string="split" data-string-split="char" data-v-81ce8483>About</a>
+                <a href="ambassador-program.html" class="ambassador" data-string="split" data-string-split="char" data-v-81ce8483>Ambassador Program</a>
+                <a href="support.html" class="contacts" data-string="split" data-string-split="char" data-v-81ce8483>Contacts</a>
+                <a href="founder.html" class="people" data-string="split" data-string-split="char" data-v-81ce8483>Founder</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<main class="cx-main">
+    <div class="cx-card">
+        <div class="cx-ring" style="background:rgba(123,81,54,.1);border:2px solid rgba(123,81,54,.25);">
+            <div class="cx-ring-inner" style="background:var(--c-black);box-shadow:0 0 2.5rem rgba(21,20,21,.2);">
+                <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M6 13l5 5L20 8" stroke="var(--c-yellow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+        </div>
+        <div class="cx-pill"><span class="sm">Stripe</span><span class="st">Verified</span></div>
+        <h1>Payout account connected!</h1>
+        <p class="cx-sub">Your bank account is verified and secured by Stripe. You're all set to start earning on Campus Plus+.</p>
+
+        <div class="cx-stats">
+            <div class="cx-stat"><div class="cx-sv">Free</div><div class="cx-sl">Standard Payout</div></div>
+            <div class="cx-stat"><div class="cx-sv">3 Days</div><div class="cx-sl">Standard Time</div></div>
+            <div class="cx-stat"><div class="cx-sv">1.5%</div><div class="cx-sl">Instant Fee</div></div>
+        </div>
+
+        <div class="cx-steps">
+            <div class="cx-step"><div class="cx-si">&#10003;</div><div><div class="cx-st-title">Bank account verified</div><div class="cx-st-sub">Earnings go directly to your linked account</div></div></div>
+            <div class="cx-step"><div class="cx-si">&#128176;</div><div><div class="cx-st-title">Post your first listing</div><div class="cx-st-sub">Create a Marketplace listing or Gig and start getting booked on campus</div></div></div>
+            <div class="cx-step"><div class="cx-si">&#9889;</div><div><div class="cx-st-title">Cash out anytime</div><div class="cx-st-sub">Standard (free, 3 days) or instant (1.5% fee)</div></div></div>
+        </div>
+
+        <a href="campusplus://payout-setup-complete" class="cx-btn-p">Back to Campus Plus+ <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="index.html" class="cx-btn-s">Go to homepage</a>
+    </div>
+</main>
+
+<footer class="page-footer -home" data-string="progress" data-string-self-disable data-string-id="main-footer-index" data-string-enter-vp="bottom" data-string-exit-vp="bottom" data-v-a76684eb data-v-a41b36d1>
+    <span class="underlay" data-v-a41b36d1></span>
+    <div class="-w block" data-v-a41b36d1 data-v-e764b164>
+        <span class="-mm no-so-me" data-v-a41b36d1>@joincampusplus</span>
+        <span class="-hp independent" data-v-a41b36d1>Operated by Campus Marketplace LLC, Newport Beach, CA.</span>
+        <span class="-h4 -m-h6 operating" data-v-a41b36d1>
+            <span data-v-a41b36d1>Live on</span>
+            <span data-v-a41b36d1>179+</span>
+            <span data-v-a41b36d1>Campuses.</span>
+        </span>
+        <nav data-v-a41b36d1>
+            <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl places" data-string="split" data-string-split="char" data-v-a41b36d1>How It Works</a>
+            <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl objects" data-string="split" data-string-split="char" data-v-a41b36d1>Marketplace</a>
+            <a href="/about" class="-h0 -mid-h1 -m-h2 -nl about" data-string="split" data-string-split="char" data-v-a41b36d1>About</a>
+            <a href="ambassador-program.html" class="-h0 -mid-h1 -m-h2 -nl ambassador" data-string="split" data-string-split="char" data-v-a41b36d1>Ambassador Program</a>
+            <a href="support.html" class="-h0 -mid-h1 -m-h2 -nl contacts" data-string="split" data-string-split="char" data-v-a41b36d1>Contacts</a>
+            <a href="founder.html" class="-h0 -mid-h1 -m-h2 -nl people" data-string="split" data-string-split="char" data-v-a41b36d1>Founder</a>
+        </nav>
+        <span class="-m copy" data-v-a41b36d1>&copy; <span data-v-a41b36d1>2026</span></span>
+    </div>
+    <div class="-w after" data-v-a41b36d1 data-v-e764b164>
+        <a href="index.html" class="-nl" data-v-a41b36d1>
+            <span class="-h5 the" data-v-a41b36d1>Campus</span>
+            <span class="-h5 assembly" data-v-a41b36d1>Plus+</span>
+        </a>
+        <span class="-m -m-lrg slash" data-v-a41b36d1>/</span>
+        <figure data-v-a41b36d1 data-v-ec47b9e2><img class="lazyLoad" src="images/real/093486d4577ed4c308099830860b9a36.jpg" alt="Campus Plus+" data-v-ec47b9e2></figure>
+    </div>
+    <figure class="stone-3" data-v-a41b36d1 data-v-ec47b9e2><img class="lazyLoad" src="images/real/d62893f5fd8723ad6dc11bbed21b0d48.jpg" alt="Campus Plus+" data-v-ec47b9e2></figure>
+    <nav class="legal-links">
+        <a href="safety.html">Safety &amp; Trust</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="cookies.html">Cookie Policy</a>
+    </nav>
+</footer>
+
+
+<div class="page-transition" id="page-transition" style="--top-position:0;">
+    <div class="g">
+        <span style="--order:1;--order-back:4;"></span>
+        <span style="--order:2;--order-back:3;"></span>
+        <span style="--order:3;--order-back:2;"></span>
+        <span style="--order:4;--order-back:1;"></span>
+    </div>
+    <div class="t">
+        <span>
+            <span class="-h5 the" style="--order:1;">Campus</span>
+            <span class="-h5 assembly" style="--order:2;"> Plus+</span>
+        </span>
+    </div>
+</div>
+<div class="m-transition-underlay" style="--top-position:0;"></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
