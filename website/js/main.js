@@ -184,6 +184,35 @@
     });
   }
 
+  function initHeroPhoneTilt() {
+    var wrap = document.getElementById('hero-phone');
+    var tilt = document.getElementById('hero-phone-tilt');
+    if (!wrap || !tilt) return;
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    var maxTilt = 16;
+
+    wrap.addEventListener('mouseenter', function () {
+      tilt.style.transition = 'transform .08s linear';
+    });
+
+    wrap.addEventListener('mousemove', function (e) {
+      var r = wrap.getBoundingClientRect();
+      var nx = (e.clientX - r.left) / r.width - 0.5;
+      var ny = (e.clientY - r.top) / r.height - 0.5;
+      tilt.style.setProperty('--tilt-y', (nx * maxTilt).toFixed(2) + 'deg');
+      tilt.style.setProperty('--tilt-x', (-ny * maxTilt).toFixed(2) + 'deg');
+      tilt.style.setProperty('--tilt-scale', 1.03);
+    });
+
+    wrap.addEventListener('mouseleave', function () {
+      tilt.style.transition = 'transform .6s cubic-bezier(.22,.9,.3,1)';
+      tilt.style.setProperty('--tilt-x', '0deg');
+      tilt.style.setProperty('--tilt-y', '0deg');
+      tilt.style.setProperty('--tilt-scale', 1);
+    });
+  }
+
   function initMouseTrail() {
     if (!window.matchMedia('(pointer: fine)').matches) return;
     var canvas = document.createElement('canvas');
@@ -686,5 +715,6 @@
     initUpdatesCarousel();
     initPageTransition();
     initMouseTrail();
+    initHeroPhoneTilt();
   });
 })();

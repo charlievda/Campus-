@@ -2440,6 +2440,45 @@
         width:100%
     }
 
+    .c-welcome .-w[data-v-e764b164] > .hero-phone {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+    }
+
+    .hero-phone {
+        position: absolute;
+        top: calc(var(--vh, 1vh) * 30);
+        left: 50%;
+        width: min(30vw, 8rem);
+        transform: translate(-50%, -46%);
+        z-index: 15;
+        pointer-events: auto;
+        perspective: 1400px;
+    }
+
+    .hero-phone-tilt {
+        width: 100%;
+        transform-style: preserve-3d;
+        transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(var(--tilt-scale, 1));
+        transition: transform .5s cubic-bezier(.22,.9,.3,1);
+        will-change: transform;
+    }
+
+    .hero-phone-tilt img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 1.5rem 2.5rem rgba(21, 20, 21, .35));
+        pointer-events: none;
+    }
+
+    @media (min-width: 1024px) {
+        .hero-phone {
+            width: min(13vw, 9.5rem);
+            top: calc(var(--vh, 1vh) * 32);
+        }
+    }
+
     .c-welcome .-w .stone[data-v-6c6a6d99] {
         --top: 3;
         --height: 3;
