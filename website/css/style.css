@@ -2440,24 +2440,15 @@
         width:100%
     }
 
-    .c-welcome .-w[data-v-e764b164] > .hero-phone {
-        grid-column: 1 / -1;
-        grid-row: 1 / -1;
-    }
-
-    .hero-phone {
-        position: absolute;
-        top: calc(var(--vh, 1vh) * 30);
-        left: 50%;
-        width: min(30vw, 8rem);
-        transform: translate(-50%, -46%);
-        z-index: 15;
-        pointer-events: auto;
+    .c-welcome .-w .stone.hero-phone-stone[data-v-6c6a6d99] {
+        background-color: transparent;
         perspective: 1400px;
+        pointer-events: auto;
     }
 
     .hero-phone-tilt {
         width: 100%;
+        height: 100%;
         transform-style: preserve-3d;
         transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) scale(var(--tilt-scale, 1));
         transition: transform .5s cubic-bezier(.22,.9,.3,1);
@@ -2466,17 +2457,11 @@
 
     .hero-phone-tilt img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: contain;
         display: block;
         filter: drop-shadow(0 1.5rem 2.5rem rgba(21, 20, 21, .35));
         pointer-events: none;
-    }
-
-    @media (min-width: 1024px) {
-        .hero-phone {
-            width: min(13vw, 9.5rem);
-            top: calc(var(--vh, 1vh) * 32);
-        }
     }
 
     .c-welcome .-w .stone[data-v-6c6a6d99] {
@@ -2513,24 +2498,6 @@
         height: 100%;
         position: relative;
         width:100%
-    }
-
-    .c-welcome .-w .stone span[data-v-6c6a6d99] {
-        background-position: 50%;
-        background-size:contain
-    }
-
-    .c-welcome .-w .stone .hover-1[data-v-6c6a6d99] {
-        background-color: var(--c-yellow);
-        -webkit-mask-image: linear-gradient(calc(180deg + var(--spotlight-angle) * 1deg), rgba(0, 0, 0, calc(var(--spotlight-distance) /1000 + var(--progress))) 50%, transparent 100%);
-        mask-image:linear-gradient(calc(180deg + var(--spotlight-angle) * 1deg), rgba(0, 0, 0, calc(var(--spotlight-distance)/1000 + var(--progress))) 50%, transparent 100%)
-    }
-
-    .c-welcome .-w .stone .hover-2[data-v-6c6a6d99] {
-        background-color: var(--c-brown);
-        -webkit-mask-image: linear-gradient(calc(var(--spotlight-angle) * 1deg), rgba(0, 0, 0, calc(1 - var(--spotlight-distance) /1500)) 25%, transparent 100%);
-        mask-image: linear-gradient(calc(var(--spotlight-angle) * 1deg), rgba(0, 0, 0, calc(1 - var(--spotlight-distance) /1500)) 25%, transparent 100%);
-        opacity:calc(1 - var(--progress) * 2)
     }
 
     .c-welcome .-w .items[data-v-6c6a6d99], .c-welcome .-w .places[data-v-6c6a6d99] {
