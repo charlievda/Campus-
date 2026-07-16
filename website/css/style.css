@@ -2330,10 +2330,10 @@
     }
 
     .c-welcome[data-v-6c6a6d99]:after {
-        background-image: linear-gradient(180deg, transparent 50%, rgba(var(--c-black-rgb), 0) 50%, rgba(var(--c-black-rgb), .04) 56.5%, rgba(var(--c-black-rgb), .13) 62.5%, rgba(var(--c-black-rgb), .26) 67.5%, rgba(var(--c-black-rgb), .42) 72.5%, rgba(var(--c-black-rgb), .58) 77.5%, rgba(var(--c-black-rgb), .74) 82.5%, rgba(var(--c-black-rgb), .87) 87.5%, rgba(var(--c-black-rgb), .96) 93.5%, var(--c-black) 100%);
+        background-image: linear-gradient(180deg, transparent 0%, rgba(var(--c-black-rgb), 0) 0%, rgba(var(--c-black-rgb), .04) 13%, rgba(var(--c-black-rgb), .13) 25%, rgba(var(--c-black-rgb), .26) 35%, rgba(var(--c-black-rgb), .42) 45%, rgba(var(--c-black-rgb), .58) 55%, rgba(var(--c-black-rgb), .74) 65%, rgba(var(--c-black-rgb), .87) 75%, rgba(var(--c-black-rgb), .96) 87%, var(--c-black) 100%);
         left: 0;
         pointer-events: none;
-        top: calc(var(--vh, 1vh) * 80);
+        top: calc(var(--vh, 1vh) * 20);
         width: 100%;
         z-index:20
     }
@@ -3225,16 +3225,23 @@
         min-height: calc(var(--vh, 1vh) * 70);
     }
 
-    .c-places-after .figure-map .map-dots {
+    .c-places-after .figure-map .map-us {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 130%;
-        max-width: 90rem;
+        width: 105%;
+        max-width: 74rem;
         height: auto;
-        fill: var(--c-black);
-        opacity: .07;
+        opacity: .16;
+    }
+
+    .c-places-after .figure-map .map-us path {
+        fill: none;
+        stroke: var(--c-black);
+        stroke-width: 1.2;
+        stroke-linejoin: round;
+        vector-effect: non-scaling-stroke;
     }
 
     .c-places-after .figure-map[data-v-e539f811]:before {
@@ -4641,8 +4648,8 @@
         background-repeat: repeat;
         background-size: 50%;
         display: block;
-        -webkit-mask-image: none;
-        mask-image: none;
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%);
+        mask-image: linear-gradient(to bottom, transparent, black 12%);
         -webkit-mask-position: center;
         mask-position: center;
         -webkit-mask-repeat: no-repeat;
