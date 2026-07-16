@@ -184,6 +184,63 @@
     });
   }
 
+  function initMouseTrail() {
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+    var canvas = document.createElement('canvas');
+    canvas.id = 'mouse-trail-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '9999';
+    canvas.style.mixBlendMode = 'difference';
+    document.body.appendChild(canvas);
+
+    var ctx = canvas.getContext('2d');
+    var dpr = window.devicePixelRatio || 1;
+
+    function resize() {
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = window.innerWidth + 'px';
+      canvas.style.height = window.innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var maxAge = 450;
+    var points = [];
+
+    window.addEventListener('mousemove', function (e) {
+      points.push({ x: e.clientX, y: e.clientY, t: performance.now() });
+    });
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var now = performance.now();
+      points = points.filter(function (p) { return now - p.t < maxAge; });
+
+      for (var i = 1; i < points.length; i++) {
+        var p0 = points[i - 1];
+        var p1 = points[i];
+        var age = now - p1.t;
+        var alpha = Math.max(0, 1 - age / maxAge);
+        ctx.beginPath();
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
+        ctx.strokeStyle = 'rgba(255,255,255,' + (alpha * 0.9).toFixed(3) + ')';
+        ctx.lineWidth = Math.max(0.6, 2 * alpha);
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
   /* ---------- sequence controller ---------- */
   var sequencers = {};
   function getSequencer(id) {
@@ -628,5 +685,6 @@
     initLazyImages();
     initUpdatesCarousel();
     initPageTransition();
+    initMouseTrail();
   });
 })();
