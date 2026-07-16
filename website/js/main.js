@@ -280,13 +280,13 @@
     });
   }
 
-  var placeNames = ['Marketplace', 'Gigs', 'Messages', 'Wallet'];
+  var placeNames = ['BUY', 'SELL', 'RENT', 'HIRE'];
   function updatePlacesLabel() {
     var seq = sequencers['places-sequencer'];
     if (!seq) return;
     var label = document.querySelector('.c-places .place-name span');
     var order = document.querySelector('.c-places .sequesnce-nav .order span span:first-child');
-    if (label) label.textContent = placeNames[seq.step] || 'Marketplace';
+    if (label) label.textContent = placeNames[seq.step] || 'BUY';
     if (order) order.textContent = seq.step + 1;
   }
 
