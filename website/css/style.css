@@ -5555,7 +5555,7 @@ footer[data-v-a41b36d1] {
 }
 
 footer .underlay[data-v-a41b36d1] {
-    background-color: var(--c-black);
+    background-color: var(--c-stone);
     top: 0;
     right: 0;
     bottom: 0;
@@ -5564,23 +5564,13 @@ footer .underlay[data-v-a41b36d1] {
 }
 
 footer .underlay[data-v-a41b36d1]:before {
-    background-color: var(--c-grey);
-    background-repeat: repeat;
-    background-size: 50%;
+    background-color: transparent;
     content: "";
     display: block;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    -webkit-mask-image: none;
-    mask-image: none;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
     position:absolute
 }
 
@@ -5890,8 +5880,17 @@ footer .legal-links a:hover {
     color: var(--c-yellow);
 }
 
+body.fp-page footer .underlay[data-v-a41b36d1],
+body.fd-page footer .underlay[data-v-a41b36d1],
+body.cs-page footer .underlay[data-v-a41b36d1],
+body.sp-page footer .underlay[data-v-a41b36d1],
+body.sf-page footer .underlay[data-v-a41b36d1],
+body.lg-page footer .underlay[data-v-a41b36d1] {
+    background-image: linear-gradient(to bottom, var(--c-yellow), var(--c-stone) 10rem);
+}
+
 footer.-home .underlay[data-v-a41b36d1] {
-    background-color: var(--c-black);
+    background-color: var(--c-stone);
     top: 0;
     right: 0;
     bottom: 0;
