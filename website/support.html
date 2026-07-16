@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Support — Campus Plus+</title>
+<meta name="theme-color" content="#f1eade">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151415'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23f1eade' text-anchor='middle'%3EC%2B%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Get help with Campus Plus+ — contact support, browse FAQs, or send us a message.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+
+.sp-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
+.sp-main{max-width:48rem;margin:0 auto;padding:2rem 1.5rem 6rem;}
+.sp-main h1{font-family:var(--font-t-2);font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.05;margin:1rem 0 .5rem;}
+.sp-main .lede{font-size:1.15rem;color:var(--c-brown);margin-bottom:2.5rem;max-width:36rem;}
+.sp-main h2{font-family:var(--font-t-1);font-size:1.6rem;margin:3.5rem 0 1.25rem;border-top:1px solid rgba(21,20,21,.15);padding-top:2.5rem;}
+.sp-main h2:first-of-type{margin-top:0;border-top:none;padding-top:0;}
+.sp-main p{line-height:1.55;}
+
+.sp-contact-grid{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;}
+.sp-contact-card{flex:1 1 14rem;background:rgba(21,20,21,.04);border-radius:.75rem;padding:1.5rem;text-decoration:none;color:var(--c-black);transition:background .3s var(--f-cubic), transform .3s var(--f-cubic);display:block;}
+.sp-contact-card:hover{background:rgba(21,20,21,.08);transform:translateY(-2px);}
+.sp-contact-card .cc-title{font-weight:600;display:block;margin-bottom:.35rem;}
+.sp-contact-card .cc-desc{font-size:.88rem;color:var(--c-brown);line-height:1.5;display:block;margin-bottom:.6rem;}
+.sp-contact-card .cc-action{font-size:.85rem;font-weight:600;color:var(--c-black);}
+
+.sp-faq-list{display:flex;flex-direction:column;gap:.6rem;}
+.sp-faq-item{background:rgba(21,20,21,.04);border-radius:.75rem;overflow:hidden;}
+.sp-faq-q{width:100%;background:none;border:none;cursor:pointer;padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;font-family:var(--font-b-medium);font-size:.98rem;color:var(--c-black);}
+.sp-faq-chevron{width:1.1rem;height:1.1rem;flex-shrink:0;transition:transform .3s var(--f-cubic);}
+.sp-faq-item.-open .sp-faq-chevron{transform:rotate(180deg);}
+.sp-faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--f-cubic);}
+.sp-faq-a-inner{padding:0 1.3rem 1.2rem;font-size:.92rem;color:var(--c-brown);line-height:1.65;}
+.sp-faq-a-inner a{color:var(--c-black);text-decoration:underline;}
+
+.sp-banner{display:flex;gap:.8rem;align-items:flex-start;background:rgba(123,81,54,.08);border:1px solid rgba(123,81,54,.2);border-radius:.6rem;padding:1rem 1.2rem;margin-bottom:1.5rem;font-size:.9rem;line-height:1.55;color:var(--c-brown);}
+
+.sp-form{background:rgba(21,20,21,.04);border-radius:1rem;padding:2rem;}
+.sp-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.sp-field{display:flex;flex-direction:column;gap:.4rem;}
+.sp-field.-full{grid-column:span 2;}
+.sp-field label{font-size:.78rem;font-weight:600;color:var(--c-brown);text-transform:uppercase;letter-spacing:.03em;}
+.sp-field input,.sp-field select,.sp-field textarea{font-family:var(--font-b-regular);font-size:.95rem;color:var(--c-black);background:var(--c-white);border:1px solid rgba(21,20,21,.15);border-radius:.5rem;padding:.7rem .9rem;outline:none;transition:border-color .2s;}
+.sp-field input:focus,.sp-field select:focus,.sp-field textarea:focus{border-color:var(--c-black);}
+.sp-field textarea{min-height:8rem;resize:vertical;font-family:var(--font-b-regular);line-height:1.5;}
+.sp-submit{width:100%;padding:1rem;background:var(--c-black);color:var(--c-yellow);border:none;border-radius:2rem;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase;cursor:pointer;margin-top:.4rem;transition:background .2s;}
+.sp-submit:hover{background:var(--c-brown);}
+.sp-form-note{font-size:.8rem;color:var(--c-brown);text-align:center;margin-top:.8rem;}
+.sp-success{display:none;text-align:center;padding:1.5rem 0;}
+.sp-success h3{font-family:var(--font-t-1);font-size:1.4rem;margin-bottom:.5rem;}
+.sp-success p{color:var(--c-brown);font-size:.92rem;}
+
+@media (max-width:640px){
+  .sp-contact-grid{flex-direction:column;}
+  .sp-form-grid{grid-template-columns:1fr;}
+  .sp-field.-full{grid-column:span 1;}
+  .sp-form{padding:1.5rem 1.25rem;}
+}
+
+</style>
+</head>
+<body class="sp-page">
+
+<header data-v-81ce8483>
+    <div class="-w" data-v-81ce8483 data-v-e764b164>
+        <a href="index.html" class="-nl" data-v-81ce8483>
+            <span class="-h5 the" data-v-81ce8483>Campus</span>
+            <span class="-h5 assembly" data-v-81ce8483>Plus+</span>
+        </a>
+        <a href="index.html" class="button -p -m-m -reverse places" aria-label="How It Works" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>How It Works</span>
+        </a>
+        <span class="sep" data-v-81ce8483></span>
+        <a href="index.html" class="button -p -m-m -reverse objects" aria-label="Marketplace" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Marketplace</span>
+        </a>
+        <a href="https://apps.apple.com/app/id6762578346" target="_blank" rel="noopener noreferrer" class="-reverse request button -p -m-m" aria-label="Get the App" data-v-f52f19c3>
+            <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Get the App</span>
+        </a>
+        <div class="menu-wrap" data-v-81ce8483>
+            <button type="button" class="menu button -p -m-m js-open-menu" aria-label="Menu" data-v-f52f19c3>
+                <span class="text -mm -up" data-string="split" data-string-split="char[center]" data-v-f52f19c3>Menu</span>
+                <span class="menu-icon" data-v-81ce8483></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="full-screen-menu" style="display:none" data-v-81ce8483 id="site-menu">
+    <span class="overlay" data-v-81ce8483></span>
+    <div class="oy" data-v-81ce8483>
+        <div class="-w" data-v-81ce8483 data-v-e764b164>
+            <button type="button" class="button-close js-close-menu" aria-label="Close menu" data-v-81ce8483>
+                <span data-v-81ce8483>Close</span>
+            </button>
+            <span class="close js-close-menu" data-v-81ce8483></span>
+            <span class="underlay" data-v-81ce8483><div data-v-81ce8483></div></span>
+            <nav data-v-81ce8483>
+                <div class="guy" data-v-81ce8483>
+                    <figure data-v-81ce8483><img src="images/real/make_this_male_more_manly,_202605060937.jpeg" alt="Campus Plus+" data-v-81ce8483></figure>
+                    <span data-v-81ce8483><span data-string="split" data-string-split="char" data-v-81ce8483>Campus Plus+</span></span>
+                </div>
+                <a href="index.html" class="back-home" data-string="split" data-string-split="char" data-v-81ce8483>Home</a>
+                <a href="index.html" class="places" data-string="split" data-string-split="char" data-v-81ce8483>How It Works</a>
+                <a href="index.html" class="objects" data-string="split" data-string-split="char" data-v-81ce8483>Marketplace</a>
+                <a href="/about" class="about" data-string="split" data-string-split="char" data-v-81ce8483>About</a>
+                <a href="ambassador-program.html" class="ambassador" data-string="split" data-string-split="char" data-v-81ce8483>Ambassador Program</a>
+                <a href="support.html" class="contacts" data-string="split" data-string-split="char" data-v-81ce8483>Contacts</a>
+                <a href="founder.html" class="people" data-string="split" data-string-split="char" data-v-81ce8483>Founder</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<main class="sp-main">
+    <h1>Support</h1>
+    <p class="lede">Get answers fast, or send us a message directly &mdash; we typically reply within 24 hours.</p>
+
+    <div class="sp-contact-grid">
+        <a href="mailto:support@joincampusplus.app" class="sp-contact-card">
+            <span class="cc-title">Email Support</span>
+            <span class="cc-desc">Reach our team directly for account, payment, or booking issues.</span>
+            <span class="cc-action">support@joincampusplus.app &rarr;</span>
+        </a>
+        <a href="#contact-form" class="sp-contact-card">
+            <span class="cc-title">Send a Message</span>
+            <span class="cc-desc">Fill out the form below and we'll route it to the right person.</span>
+            <span class="cc-action">Open form &rarr;</span>
+        </a>
+        <a href="safety.html" class="sp-contact-card">
+            <span class="cc-title">Safety &amp; Trust</span>
+            <span class="cc-desc">How we verify students, protect payments, and handle reports.</span>
+            <span class="cc-action">Learn more &rarr;</span>
+        </a>
+    </div>
+
+    <h2 id="faq">Frequently Asked Questions</h2>
+    <div class="sp-faq-list">
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>How do I sign up for Campus Plus+?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Download the app and sign up with your school's .edu email address. We verify your enrollment through your school email, so there's no waiting on manual approval &mdash; you're in within minutes.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>My school isn't listed &mdash; can I still join?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Campus Plus+ is live on 179+ campuses and expanding every month. Use our <a href="check-school.html">school lookup tool</a> to check your school's status and join the waitlist &mdash; we'll notify you the moment your campus goes live.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>How do payments work?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Every payment is processed securely through Stripe. On the free plan, Marketplace charges 4% to the buyer and 4% to the seller (capped at $20 each), and Gigs charge 5% from each side. Campus+ subscribers get reduced rates &mdash; 2.5%/2.5% on Marketplace and 3.5%/3.5% on Gigs. See our <a href="pricing.html">Campus+ Pricing</a> page for the full breakdown.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>What is Campus+, and how is it different from the free plan?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Campus+ is our paid membership tier &mdash; the same app, with lower fees on every Marketplace and Gigs transaction. It's available weekly, monthly, or annually. Full plans and pricing are on the <a href="pricing.html">Campus+ Pricing</a> page.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>Is my information safe on Campus Plus+?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Yes. Every account requires .edu verification, payments run through Stripe's secure escrow flow, and every user is subject to two-sided reviews plus block and report tools. Read more on our <a href="safety.html">Safety &amp; Trust</a> page.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>How do I report a user or an issue with a transaction?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Use the block or report option on any user's profile or in a conversation, or email us directly at <a href="mailto:support@joincampusplus.app">support@joincampusplus.app</a> with the details. Our team reviews every report promptly.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>What is the Founder &amp; Ambassador Program?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">It's how students help bring Campus Plus+ to their school and get rewarded for referrals, across four cumulative founder tiers. See the <a href="ambassador-program.html">Ambassador Program</a> page for details.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>How do I delete my account?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Email us at <a href="mailto:support@joincampusplus.app">support@joincampusplus.app</a> from the address on your account and we'll process the deletion within 30 days, per our <a href="privacy.html">Privacy Policy</a>.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>Is Campus Plus+ available on Android?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Campus Plus+ is currently available on iOS. Android support is on our roadmap &mdash; check back here or follow <a href="https://instagram.com/joincampusplus" target="_blank" rel="noopener noreferrer">@joincampusplus</a> for updates.</div></div>
+        </div>
+
+        <div class="sp-faq-item">
+            <button type="button" class="sp-faq-q" data-faq-toggle>
+                <span>Who do I contact for press, partnerships, or bringing Campus Plus+ to my school?</span>
+                <svg class="sp-faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="sp-faq-a"><div class="sp-faq-a-inner">Email us at <a href="mailto:support@joincampusplus.app">support@joincampusplus.app</a> &mdash; include your campus name and .edu domain if you're requesting we bring Campus Plus+ to your school.</div></div>
+        </div>
+
+    </div>
+
+    <h2 id="contact-form">Send Us a Message</h2>
+    <div class="sp-banner">We typically respond within 24 hours. For payment or safety issues, include as much detail as you can &mdash; screenshots, listing names, or usernames involved.</div>
+
+    <div class="sp-form" id="sp-form-card">
+        <div id="sp-form-body">
+            <div class="sp-form-grid">
+                <div class="sp-field">
+                    <label for="sp-name">Full Name</label>
+                    <input type="text" id="sp-name" placeholder="Your name">
+                </div>
+                <div class="sp-field">
+                    <label for="sp-email">Email Address</label>
+                    <input type="email" id="sp-email" placeholder="you@university.edu">
+                </div>
+                <div class="sp-field -full">
+                    <label for="sp-category">Category</label>
+                    <select id="sp-category">
+                        <option value="">Select a topic&hellip;</option>
+                        <option value="payment">Payment or payout issue</option>
+                        <option value="listing">Listing or booking problem</option>
+                        <option value="account">Account or login</option>
+                        <option value="report">Report a user</option>
+                        <option value="campus">Add my campus</option>
+                        <option value="press">Press or partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="sp-field -full">
+                    <label for="sp-message">Message</label>
+                    <textarea id="sp-message" placeholder="Tell us what's going on &mdash; the more detail, the faster we can help."></textarea>
+                </div>
+            </div>
+            <button type="button" class="sp-submit" id="sp-submit-btn">Send Message</button>
+            <p class="sp-form-note">This opens your email app with a pre-filled message to support@joincampusplus.app.</p>
+        </div>
+        <div class="sp-success" id="sp-success">
+            <h3>Message ready to send</h3>
+            <p>Your email app should have opened with everything filled in. Just hit send and we'll get back to you within 24 hours.</p>
+        </div>
+    </div>
+</main>
+
+<footer class="page-footer -home" data-string="progress" data-string-self-disable data-string-id="main-footer-index" data-string-enter-vp="bottom" data-string-exit-vp="bottom" data-v-a76684eb data-v-a41b36d1>
+    <span class="underlay" data-v-a41b36d1></span>
+    <div class="-w block" data-v-a41b36d1 data-v-e764b164>
+        <span class="-mm no-so-me" data-v-a41b36d1>@joincampusplus</span>
+        <span class="-hp independent" data-v-a41b36d1>Operated by Campus Marketplace LLC, Newport Beach, CA.</span>
+        <span class="-h4 -m-h6 operating" data-v-a41b36d1>
+            <span data-v-a41b36d1>Live on</span>
+            <span data-v-a41b36d1>179+</span>
+            <span data-v-a41b36d1>Campuses.</span>
+        </span>
+        <nav data-v-a41b36d1>
+            <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl places" data-string="split" data-string-split="char" data-v-a41b36d1>How It Works</a>
+            <a href="index.html" class="-h0 -mid-h1 -m-h2 -nl objects" data-string="split" data-string-split="char" data-v-a41b36d1>Marketplace</a>
+            <a href="/about" class="-h0 -mid-h1 -m-h2 -nl about" data-string="split" data-string-split="char" data-v-a41b36d1>About</a>
+            <a href="ambassador-program.html" class="-h0 -mid-h1 -m-h2 -nl ambassador" data-string="split" data-string-split="char" data-v-a41b36d1>Ambassador Program</a>
+            <a href="support.html" class="-h0 -mid-h1 -m-h2 -nl contacts" data-string="split" data-string-split="char" data-v-a41b36d1>Contacts</a>
+            <a href="founder.html" class="-h0 -mid-h1 -m-h2 -nl people" data-string="split" data-string-split="char" data-v-a41b36d1>Founder</a>
+        </nav>
+        <span class="-m copy" data-v-a41b36d1>&copy; <span data-v-a41b36d1>2026</span></span>
+    </div>
+    <div class="-w after" data-v-a41b36d1 data-v-e764b164>
+        <a href="index.html" class="-nl" data-v-a41b36d1>
+            <span class="-h5 the" data-v-a41b36d1>Campus</span>
+            <span class="-h5 assembly" data-v-a41b36d1>Plus+</span>
+        </a>
+        <span class="-m -m-lrg slash" data-v-a41b36d1>/</span>
+        <figure data-v-a41b36d1 data-v-ec47b9e2><img class="lazyLoad" src="images/real/093486d4577ed4c308099830860b9a36.jpg" alt="Campus Plus+" data-v-ec47b9e2></figure>
+    </div>
+    <figure class="stone-3" data-v-a41b36d1 data-v-ec47b9e2><img class="lazyLoad" src="images/real/d62893f5fd8723ad6dc11bbed21b0d48.jpg" alt="Campus Plus+" data-v-ec47b9e2></figure>
+    <nav class="legal-links">
+        <a href="safety.html">Safety &amp; Trust</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="cookies.html">Cookie Policy</a>
+    </nav>
+</footer>
+
+
+<div class="page-transition" id="page-transition" style="--top-position:0;">
+    <div class="g">
+        <span style="--order:1;--order-back:4;"></span>
+        <span style="--order:2;--order-back:3;"></span>
+        <span style="--order:3;--order-back:2;"></span>
+        <span style="--order:4;--order-back:1;"></span>
+    </div>
+    <div class="t">
+        <span>
+            <span class="-h5 the" style="--order:1;">Campus</span>
+            <span class="-h5 assembly" style="--order:2;"> Plus+</span>
+        </span>
+    </div>
+</div>
+<div class="m-transition-underlay" style="--top-position:0;"></div>
+
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+
+
+<script>
+document.querySelectorAll('[data-faq-toggle]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.sp-faq-item');
+    var panel = item.querySelector('.sp-faq-a');
+    var isOpen = item.classList.contains('-open');
+    document.querySelectorAll('.sp-faq-item.-open').forEach(function(openItem){
+      if (openItem !== item) {
+        openItem.classList.remove('-open');
+        openItem.querySelector('.sp-faq-a').style.maxHeight = '0';
+      }
+    });
+    if (isOpen) {
+      item.classList.remove('-open');
+      panel.style.maxHeight = '0';
+    } else {
+      item.classList.add('-open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+  });
+});
+
+var spSubmitBtn = document.getElementById('sp-submit-btn');
+if (spSubmitBtn) {
+  spSubmitBtn.addEventListener('click', function(){
+    var name = document.getElementById('sp-name').value.trim();
+    var email = document.getElementById('sp-email').value.trim();
+    var category = document.getElementById('sp-category').value;
+    var message = document.getElementById('sp-message').value.trim();
+
+    if (!name || !email || !message) {
+      [['sp-name', name], ['sp-email', email], ['sp-message', message]].forEach(function(pair){
+        var field = document.getElementById(pair[0]);
+        field.style.borderColor = pair[1] ? '' : 'var(--c-red)';
+      });
+      return;
+    }
+
+    var subject = encodeURIComponent('Campus Plus+ Support: ' + (category || 'General'));
+    var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCategory: ' + (category || 'N/A') + '\n\nMessage:\n' + message);
+    window.location.href = 'mailto:support@joincampusplus.app?subject=' + subject + '&body=' + body;
+
+    document.getElementById('sp-form-body').style.display = 'none';
+    document.getElementById('sp-success').style.display = 'block';
+  });
+}
+
+document.querySelectorAll('.sp-field input, .sp-field textarea').forEach(function(el){
+  el.addEventListener('input', function(){ this.style.borderColor = ''; });
+});
+</script>
+
+</body>
+</html>

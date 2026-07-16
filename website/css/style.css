@@ -4510,7 +4510,7 @@
         display: block;
         font-size: 1.1rem;
         letter-spacing: .04em;
-        margin-top: var(--h3);
+        margin-top: var(--h4);
         text-align: center;
         text-transform: uppercase;
         color: var(--c-brown);
@@ -4536,7 +4536,7 @@
         display: flex;
         gap: 1.2rem;
         justify-content: center;
-        margin-top: var(--h4);
+        margin-top: var(--h5);
     }
 
     .updates-carousel .sequence-nav .num {
@@ -5850,6 +5850,28 @@ footer .stone-3[data-v-a41b36d1] {
     transform: translate3d(0, calc(var(--vh, 1vh) * -15 * var(--progress)), 0) rotate(calc(60deg - var(--progress) * 30deg));
     width: 25%;
     z-index:50
+}
+
+footer .legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .6rem 1.6rem;
+    padding: 0 var(--g-gap) var(--h3);
+    position: relative;
+    z-index: 60;
+}
+
+footer .legal-links a {
+    color: rgba(var(--c-yellow-rgb), .55);
+    font-size: .85rem;
+    letter-spacing: .02em;
+    text-decoration: none;
+    transition: color .3s var(--f-cubic);
+}
+
+footer .legal-links a:hover {
+    color: var(--c-yellow);
 }
 
 footer.-home .underlay[data-v-a41b36d1] {

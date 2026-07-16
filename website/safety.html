@@ -3,47 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Ambassador Program — Campus Plus+</title>
+<title>Safety & Trust — Campus Plus+</title>
 <meta name="theme-color" content="#f1eade">
 <meta name="color-scheme" content="light">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151415'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23f1eade' text-anchor='middle'%3EC%2B%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Campus Plus+ Ambassador Program and Founder Program — referral tiers, transaction bonuses, and fee structure.">
+<meta name="description" content="How Campus Plus+ protects students on both sides of every transaction.">
 <link rel="stylesheet" href="css/style.css">
 <style>
-  .fp-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
-  .fp-header{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.5rem;max-width:64rem;margin:0 auto;}
-  .fp-header a.logo{font-family:var(--font-t-1);font-size:1.4rem;color:var(--c-black);text-decoration:none;}
-  .fp-header a.back{color:var(--c-brown);text-decoration:none;font-size:.95rem;}
-  .fp-header a.back:hover{text-decoration:underline;}
-  .fp-main{max-width:44rem;margin:0 auto;padding:2rem 1.5rem 6rem;}
-  .fp-main h1{font-family:var(--font-t-2);font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.05;margin:1rem 0 .5rem;}
-  .fp-main .lede{font-size:1.15rem;color:var(--c-brown);margin-bottom:2.5rem;max-width:36rem;}
-  .fp-main h2{font-family:var(--font-t-1);font-size:1.6rem;margin:3.5rem 0 1rem;border-top:1px solid rgba(21,20,21,.15);padding-top:2.5rem;}
-  .fp-main h2:first-of-type{border-top:none;padding-top:0;}
-  .fp-main p{line-height:1.55;margin-bottom:1rem;}
-  .fp-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem;}
-  .fp-table th,.fp-table td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid rgba(21,20,21,.12);}
-  .fp-table th{font-weight:600;color:var(--c-brown);text-transform:uppercase;font-size:.75rem;letter-spacing:.04em;}
-  .fp-table td.num{font-variant-numeric:tabular-nums;}
-  .fp-pricing{display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;}
-  .fp-pricing .plan{flex:1 1 9rem;background:rgba(21,20,21,.04);border-radius:.5rem;padding:1.2rem;}
-  .fp-pricing .plan .amount{font-family:var(--font-t-1);font-size:1.6rem;display:block;margin-bottom:.2rem;}
-  .fp-pricing .plan .period{font-size:.85rem;color:var(--c-brown);}
-  .fp-tiers{list-style:none;margin:1.5rem 0;padding:0;counter-reset:tier;}
-  .fp-tiers li{counter-increment:tier;position:relative;padding:.9rem 0 .9rem 3rem;border-bottom:1px solid rgba(21,20,21,.1);}
-  .fp-tiers li:before{content:counter(tier);position:absolute;left:0;top:.9rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--c-black);color:var(--c-yellow);display:flex;align-items:center;justify-content:center;font-size:.85rem;}
-  .fp-tiers li .name{font-weight:600;display:block;}
-  .fp-tiers li .detail{margin:.35rem 0 0;font-size:.92rem;color:var(--c-brown);line-height:1.5;}
-  .fp-note{background:rgba(123,81,54,.08);border-left:3px solid var(--c-brown);padding:1rem 1.2rem;font-size:.92rem;border-radius:0 .3rem .3rem 0;margin:1.5rem 0;}
-  .fp-cta{display:inline-block;margin-top:1rem;padding:.9rem 1.8rem;background:var(--c-black);color:var(--c-yellow);text-decoration:none;border-radius:2rem;font-size:.9rem;letter-spacing:.03em;text-transform:uppercase;}
-  .fp-cta:hover{background:var(--c-brown);}
-  .fp-footer{border-top:1px solid rgba(21,20,21,.15);}
-  .fp-footer .-w{max-width:44rem;margin:0 auto;padding:2rem 1.5rem;display:flex;flex-direction:column;gap:.4rem;font-size:.85rem;color:var(--c-brown);}
-  .fp-footer a{color:var(--c-brown);}
-  @media (max-width:640px){.fp-pricing{flex-direction:column;}}
+
+.sf-page{background-color:var(--c-yellow);color:var(--c-black);min-height:100vh;font-family:var(--font-b-regular);}
+.sf-main{max-width:52rem;margin:0 auto;padding:2rem 1.5rem 6rem;}
+.sf-eyebrow{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-brown);font-weight:600;margin-bottom:.75rem;}
+.sf-main h1{font-family:var(--font-t-2);font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.08;margin:0 0 1.25rem;}
+.sf-lede{font-size:1.1rem;line-height:1.6;color:var(--c-brown);max-width:38rem;margin-bottom:2rem;}
+.sf-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3.5rem;}
+.sf-pill{background:rgba(21,20,21,.06);border-radius:2rem;padding:.5rem 1.1rem;font-size:.85rem;font-weight:600;}
+
+.sf-section-label{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--c-brown);font-weight:600;margin-bottom:.5rem;}
+.sf-section-title{font-family:var(--font-t-1);font-size:1.9rem;line-height:1.15;margin:0 0 2rem;}
+
+.sf-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:4rem;}
+.sf-card{background:rgba(21,20,21,.04);border-radius:.9rem;padding:1.5rem 1.6rem;}
+.sf-card .num{font-family:var(--font-t-1);font-size:1.3rem;color:var(--c-brown);display:block;margin-bottom:.5rem;}
+.sf-card h3{font-size:1.05rem;font-weight:600;margin-bottom:.5rem;}
+.sf-card p{font-size:.9rem;line-height:1.6;color:var(--c-brown);}
+
+.sf-age-block{background:var(--c-black);color:var(--c-yellow);border-radius:1rem;padding:2.25rem 2rem;}
+.sf-age-block .sf-section-label{color:rgba(241,234,222,.55);}
+.sf-age-block h2{font-family:var(--font-t-1);font-size:1.6rem;margin:0 0 1rem;}
+.sf-age-block p{line-height:1.6;color:rgba(241,234,222,.8);margin-bottom:1.25rem;}
+.sf-age-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem;}
+.sf-age-list li{font-size:.92rem;line-height:1.5;padding-left:1.4rem;position:relative;color:rgba(241,234,222,.85);}
+.sf-age-list li:before{content:"";position:absolute;left:0;top:.5rem;width:.4rem;height:.4rem;border-radius:50%;background:var(--c-yellow);}
+
+@media (max-width:640px){
+  .sf-grid{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
-<body class="fp-page">
+<body class="sf-page">
 
 <header data-v-81ce8483>
     <div class="-w" data-v-81ce8483 data-v-e764b164>
@@ -96,67 +95,66 @@
     </div>
 </div>
 
-<main class="fp-main">
-    <h1>Ambassador Program</h1>
-    <p class="lede">Referral-driven programs for the students helping Campus Plus+ grow, campus by campus. Everything here — including how arrangements can end — is stated up front.</p>
 
-    <h2>Fee Structure</h2>
-    <p>Every transaction on Campus Plus+ carries a small fee, split between both sides. Campus+ subscribers pay less on every Marketplace and Gigs transaction. See full <a href="pricing.html">Campus+ pricing</a> for subscription details.</p>
-    <table class="fp-table">
-        <thead>
-            <tr><th>Plan</th><th>Marketplace</th><th>Gigs</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Free</td><td>4% buyer + 4% seller, $20 max/side</td><td>5% client + 5% worker (10% total), no cap</td></tr>
-            <tr><td>Campus+ (Pro)</td><td>2.5% buyer + 2.5% seller, $15 max/side</td><td>3.5% client + 3.5% worker (7% total), no cap</td></tr>
-        </tbody>
-    </table>
+<main class="sf-main">
+    <div class="sf-eyebrow">Safety &amp; Trust</div>
+    <h1>Safety isn't a feature.<br>It's the foundation.</h1>
+    <p class="sf-lede">From account creation to payout, every part of Campus+ is designed to protect students on both sides of every transaction.</p>
 
-    <h2>Founder Program</h2>
-    <p>Four cumulative tiers, unlocked as the number of students you refer grows &mdash; each tier keeps the perks of the one before it.</p>
-    <ol class="fp-tiers">
-        <li>
-            <span class="name">Launch Founder</span>
-            <p class="detail">Your entry point into the program. Start referring students at your school and begin building toward the next tier.</p>
-        </li>
-        <li>
-            <span class="name">Revenue Share Partner</span>
-            <p class="detail">Unlock an ongoing share of platform revenue generated by the students you've referred.</p>
-        </li>
-        <li>
-            <span class="name">Campus Founder</span>
-            <p class="detail">Recognized as a lead Founder for your campus, with added visibility and perks.</p>
-        </li>
-        <li>
-            <span class="name">Elite Campus Founder</span>
-            <p class="detail">The highest tier, reserved for the students driving the most referrals and growth at their school.</p>
-        </li>
-    </ol>
-    <p style="font-size:.85rem;color:var(--c-brown)">Exact referral thresholds for each tier are being finalized &mdash; check back soon for the full breakdown.</p>
-
-    <h2>Campus Ambassador Program</h2>
-    <p>A separate program from Founders &mdash; a flat monthly bonus based on the transaction volume you drive on your campus.</p>
-    <table class="fp-table">
-        <thead>
-            <tr><th>Transactions Driven / Month</th><th>Bonus</th></tr>
-        </thead>
-        <tbody>
-            <tr><td class="num">0 &ndash; 49</td><td>$0</td></tr>
-            <tr><td class="num">50 &ndash; 99</td><td>$15</td></tr>
-            <tr><td class="num">100 &ndash; 199</td><td>$25</td></tr>
-            <tr><td class="num">200 &ndash; 499</td><td>$50</td></tr>
-            <tr><td class="num">500+</td><td>$100</td></tr>
-        </tbody>
-    </table>
-
-    <div class="fp-note">
-        Ambassador arrangements can be terminated at any time, and revenue share terms can be reviewed at any time. This is stated upfront, not buried in fine print.
+    <div class="sf-pills">
+        <span class="sf-pill">.edu Verified Only</span>
+        <span class="sf-pill">Stripe-Powered Payments</span>
+        <span class="sf-pill">Two-Sided Reviews</span>
+        <span class="sf-pill">In-App Messaging</span>
+        <span class="sf-pill">Block &amp; Report Tools</span>
     </div>
 
-    <h2>Referral Codes</h2>
-    <p>Your referral code follows a simple format: school abbreviation + first name &mdash; for example, <strong>uscjake</strong>. If your name is already taken at your school, a trailing number is added.</p>
+    <div class="sf-section-label">How We Protect You</div>
+    <h2 class="sf-section-title">Six layers of protection built into every booking.</h2>
 
-    <a href="https://apps.apple.com/app/id6762578346" target="_blank" rel="noopener noreferrer" class="fp-cta">Get the App</a>
+    <div class="sf-grid">
+        <div class="sf-card">
+            <span class="num">01</span>
+            <h3>.edu Email Verification</h3>
+            <p>Every single account on Campus+ requires a valid .edu email address to sign up. This creates a verified-student-only community &mdash; no outsiders, no anonymous users.</p>
+        </div>
+        <div class="sf-card">
+            <span class="num">02</span>
+            <h3>Protected Escrow Payments</h3>
+            <p>When you pay for a booking, your money is held securely in escrow &mdash; powered by Stripe. It only releases to the earner once you confirm the job is complete.</p>
+        </div>
+        <div class="sf-card">
+            <span class="num">03</span>
+            <h3>Two-Sided Review System</h3>
+            <p>After every job, both the buyer and earner leave a review &mdash; visible on both profiles. This mutual accountability keeps standards high and bad actors visible.</p>
+        </div>
+        <div class="sf-card">
+            <span class="num">04</span>
+            <h3>In-App Messaging Only</h3>
+            <p>All communication stays inside Campus+. You never have to share your personal phone number or email. Messages are on-platform, giving you a record and added safety.</p>
+        </div>
+        <div class="sf-card">
+            <span class="num">05</span>
+            <h3>Block &amp; Report Tools</h3>
+            <p>If something feels off, you can block any user and report them directly from their profile or from a conversation. Reports are reviewed by our team promptly.</p>
+        </div>
+        <div class="sf-card">
+            <span class="num">06</span>
+            <h3>Campus-Only Network</h3>
+            <p>Your campus network is yours. By building within verified campus communities, we create natural accountability &mdash; these are people you might sit next to in class.</p>
+        </div>
+    </div>
+
+    <div class="sf-age-block">
+        <div class="sf-section-label">18+ Requirement</div>
+        <h2>Campus+ is for adults.</h2>
+        <p>All users must be 18 or older to create an account. Campus+ is a real financial platform handling real payments &mdash; we take this requirement seriously and enforce it at signup.</p>
+        <ul class="sf-age-list">
+            <li>Must be 18+ to create an account and transact on Campus+</li>
+            <li>Age is confirmed during identity verification for payouts</li>
+            <li>Accounts found to violate this policy are permanently removed</li>
+        </ul>
+    </div>
 </main>
 
 <footer class="page-footer -home" data-string="progress" data-string-self-disable data-string-id="main-footer-index" data-string-enter-vp="bottom" data-string-exit-vp="bottom" data-v-a76684eb data-v-a41b36d1>
@@ -196,6 +194,7 @@
     </nav>
 </footer>
 
+
 <div class="page-transition" id="page-transition" style="--top-position:0;">
     <div class="g">
         <span style="--order:1;--order-back:4;"></span>
@@ -215,5 +214,7 @@
 <script src="js/vendor/gsap.min.js"></script>
 <script src="js/vendor/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
+
+
 </body>
 </html>
