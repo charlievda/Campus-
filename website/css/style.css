@@ -3221,7 +3221,20 @@
         grid-area: 1/1;
         justify-self: stretch;
         overflow: hidden;
-        position:relative
+        position: relative;
+        min-height: calc(var(--vh, 1vh) * 70);
+    }
+
+    .c-places-after .figure-map .map-dots {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 130%;
+        max-width: 90rem;
+        height: auto;
+        fill: var(--c-black);
+        opacity: .07;
     }
 
     .c-places-after .figure-map[data-v-e539f811]:before {
@@ -3938,9 +3951,11 @@
     .s-wrapper .c-connection .-w figure[data-v-f3038ea5] {
         --top: 2;
         --left: 1;
+        --width: 3;
         align-self: end;
+        aspect-ratio: 3/4;
         justify-self: center;
-        width:2.5rem
+        width: 100%;
     }
 
     .s-wrapper .c-connection .-w[data-v-f3038ea5]:last-child {
@@ -3985,7 +4000,8 @@
         }
 
         .s-wrapper .c-connection .-w figure[data-v-f3038ea5] {
-            --left: 5
+            --left: 1;
+            --width: 4;
         }
     }
     .c-updates[data-v-86cabee1] {
