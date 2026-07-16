@@ -2446,6 +2446,10 @@
         pointer-events: auto;
     }
 
+    .c-welcome .-w .stone.hero-phone-stone[data-v-6c6a6d99]:after {
+        opacity: 0;
+    }
+
     .hero-phone-tilt {
         width: 100%;
         height: 100%;
@@ -2460,7 +2464,6 @@
         height: 100%;
         object-fit: contain;
         display: block;
-        filter: drop-shadow(0 1.5rem 2.5rem rgba(21, 20, 21, .35));
         pointer-events: none;
     }
 
