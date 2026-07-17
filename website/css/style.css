@@ -1493,7 +1493,7 @@
         display: grid;
         gap: var(--g-gap);
         grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: 2fr auto auto auto auto auto auto auto 2fr;
+        grid-template-rows: 2fr auto auto auto auto auto auto 2fr;
         position: relative;
         row-gap:0
     }
@@ -1597,32 +1597,25 @@
         grid-row-start:4
     }
 
-    .full-screen-menu .oy .-w nav a.about[data-v-81ce8483] {
-        grid-column-end: 6;
-        grid-column-start: 2;
-        grid-row-end: 6;
-        grid-row-start:5
-    }
-
     .full-screen-menu .oy .-w nav a.ambassador[data-v-81ce8483] {
         grid-column-end: 7;
         grid-column-start: 1;
-        grid-row-end: 7;
-        grid-row-start:6
+        grid-row-end: 6;
+        grid-row-start:5
     }
 
     .full-screen-menu .oy .-w nav a.contacts[data-v-81ce8483] {
         grid-column-end: 5;
         grid-column-start: 1;
-        grid-row-end: 8;
-        grid-row-start:7
+        grid-row-end: 7;
+        grid-row-start:6
     }
 
     .full-screen-menu .oy .-w nav a.people[data-v-81ce8483] {
         grid-column-end: 7;
         grid-column-start: 2;
-        grid-row-end: 9;
-        grid-row-start:8
+        grid-row-end: 8;
+        grid-row-start:7
     }
 
     .-t-menu-enter-active .overlay[data-v-81ce8483] {
@@ -1865,13 +1858,6 @@
             grid-column-start: 4;
             grid-row-end: 5;
             grid-row-start:4
-        }
-
-        .full-screen-menu .oy .-w nav a.about[data-v-81ce8483] {
-            grid-column-end: 5;
-            grid-column-start: 1;
-            grid-row-end: 6;
-            grid-row-start:5
         }
 
         .full-screen-menu .oy .-w nav a.contacts[data-v-81ce8483] {
@@ -5818,29 +5804,22 @@ footer .-w.block nav a.objects[data-v-a41b36d1] {
     grid-row-start:2
 }
 
-footer .-w.block nav a.about[data-v-a41b36d1] {
-    grid-column-start: 1;
-    grid-row-end: 4;
-    grid-row-start: 3;
-    translate:calc(var(--g-gap) * 2) 0
-}
-
 footer .-w.block nav a.ambassador[data-v-a41b36d1] {
     grid-column-start: 3;
-    grid-row-end: 5;
-    grid-row-start:4
+    grid-row-end: 4;
+    grid-row-start:3
 }
 
 footer .-w.block nav a.contacts[data-v-a41b36d1] {
     grid-column-start: 1;
-    grid-row-end: 6;
-    grid-row-start:5
+    grid-row-end: 5;
+    grid-row-start:4
 }
 
 footer .-w.block nav a.people[data-v-a41b36d1] {
     grid-column-start: 3;
-    grid-row-end: 7;
-    grid-row-start:6
+    grid-row-end: 6;
+    grid-row-start:5
 }
 
 @media (max-width: 640px) {
@@ -6080,10 +6059,6 @@ footer.-home .underlay[data-v-a41b36d1] {
 
     footer .-w.block nav a.objects[data-v-a41b36d1] {
         grid-column-start:4
-    }
-
-    footer .-w.block nav a.about[data-v-a41b36d1] {
-        translate:none
     }
 
     footer .-w.block nav a.contacts[data-v-a41b36d1] {
