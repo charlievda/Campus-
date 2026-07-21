@@ -454,7 +454,14 @@
     initObjectsCardCycle();
   }
 
-  var objectNames = ['Clothes & Rentals', 'Furniture', 'Textbooks & Books', 'Electronics', 'Accessories', 'Household Items'];
+  var objectsContent = [
+    { name: 'Clothes & Rentals', caption: 'Find everything from everyday outfits to formalwear, graduation attire, and gear—shared by students on your campus.' },
+    { name: 'Furniture', caption: 'Furnish your dorm or apartment for less with quality desks, couches, chairs, and more from nearby students.' },
+    { name: 'Textbooks & Books', caption: 'Skip bookstore prices. Buy and sell textbooks for biology, calculus, chemistry, business, engineering, and more.' },
+    { name: 'Electronics', caption: 'Discover laptops, tablets, headphones, cameras, gaming gear, and everyday tech at student-friendly prices.' },
+    { name: 'Accessories', caption: 'Shop backpacks, tote bags, hats, and other campus essentials shared by students around you.' },
+    { name: 'Household Items', caption: 'From coffee makers and kitchen essentials to storage and cleaning supplies, find everything your space needs.' }
+  ];
   function initObjectsCardCycle() {
     var container2 = document.querySelector('.sticky-container-2');
     var sequence = document.querySelector('.c-objects .sequence');
@@ -466,6 +473,7 @@
     });
     var count = wrappers.length;
     var label = document.querySelector('.c-objects .place-name');
+    var caption = document.getElementById('objects-caption');
     var orderNum = document.querySelector('.c-objects .sequesnce-nav .order span span:first-child');
 
     function setActive(index) {
@@ -475,7 +483,9 @@
         el.classList.toggle('-active', seqOrder === 0);
         el.classList.toggle('-under', seqOrder === 1);
       });
-      if (label) label.textContent = objectNames[index] || objectNames[0];
+      var data = objectsContent[index] || objectsContent[0];
+      if (label) label.textContent = data.name;
+      if (caption) caption.textContent = data.caption;
       if (orderNum) orderNum.textContent = index + 1;
     }
 
