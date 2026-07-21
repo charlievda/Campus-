@@ -455,12 +455,12 @@
   }
 
   var objectsContent = [
-    { name: 'Clothes & Rentals', caption: 'Find everything from everyday outfits to formalwear, graduation attire, and gear—shared by students on your campus.' },
-    { name: 'Furniture', caption: 'Furnish your dorm or apartment for less with quality desks, couches, chairs, and more from nearby students.' },
-    { name: 'Textbooks & Books', caption: 'Skip bookstore prices. Buy and sell textbooks for biology, calculus, chemistry, business, engineering, and more.' },
-    { name: 'Electronics', caption: 'Discover laptops, tablets, headphones, cameras, gaming gear, and everyday tech at student-friendly prices.' },
-    { name: 'Accessories', caption: 'Shop backpacks, tote bags, hats, and other campus essentials shared by students around you.' },
-    { name: 'Household Items', caption: 'From coffee makers and kitchen essentials to storage and cleaning supplies, find everything your space needs.' }
+    { tagline: 'Wear It. Rent It.', name: 'Clothes & Rentals', caption: 'Find everything from everyday outfits to formalwear, graduation attire, and gear—shared by students on your campus.' },
+    { tagline: 'Furnish Your Space', name: 'Furniture', caption: 'Furnish your dorm or apartment for less with quality desks, couches, chairs, and more from nearby students.' },
+    { tagline: 'Save on Textbooks', name: 'Textbooks & Books', caption: 'Skip bookstore prices. Buy and sell textbooks for biology, calculus, chemistry, business, engineering, and more.' },
+    { tagline: 'Tech for Less', name: 'Electronics', caption: 'Discover laptops, tablets, headphones, cameras, gaming gear, and everyday tech at student-friendly prices.' },
+    { tagline: 'Everyday Essentials', name: 'Accessories', caption: 'Shop backpacks, tote bags, hats, and other campus essentials shared by students around you.' },
+    { tagline: 'Everything for Home', name: 'Household Items', caption: 'From coffee makers and kitchen essentials to storage and cleaning supplies, find everything your space needs.' }
   ];
   function initObjectsCardCycle() {
     var container2 = document.querySelector('.sticky-container-2');
@@ -472,6 +472,7 @@
       return parseInt(el.style.getPropertyValue('--order'), 10) || 0;
     });
     var count = wrappers.length;
+    var tagline = document.getElementById('objects-tagline');
     var label = document.querySelector('.c-objects .place-name');
     var caption = document.getElementById('objects-caption');
     var orderNum = document.querySelector('.c-objects .sequesnce-nav .order span span:first-child');
@@ -484,6 +485,7 @@
         el.classList.toggle('-under', seqOrder === 1);
       });
       var data = objectsContent[index] || objectsContent[0];
+      if (tagline) tagline.textContent = data.tagline;
       if (label) label.textContent = data.name;
       if (caption) caption.textContent = data.caption;
       if (orderNum) orderNum.textContent = index + 1;
